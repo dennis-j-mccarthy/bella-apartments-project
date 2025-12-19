@@ -442,26 +442,26 @@ export default function Home() {
             </div>
 
             <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white h-[320px] sm:h-[380px]">
-              {/* Map image */}
-              <img 
-                src="/images/bonita-overhead.jpg" 
-                alt="Downtown Bonita Springs aerial view"
-                className="w-full h-full object-cover"
+              {/* Google Map embed */}
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14303.847821982857!2d-81.79453!3d26.339444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88db13d634d31e8d%3A0x4c0c0e1b1d0e1b0a!2sDowntown%20Bonita%20Springs%2C%20FL!5e0!3m2!1sen!2sus!4v1702934400000!5m2!1sen!2sus"
+                className="w-full h-full border-0"
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
               />
 
               {/* Marker overlay */}
-              <div className="absolute inset-0 pointer-events-none">
-                <div className="absolute left-1/2 top-1/2 -translate-x-8 -translate-y-6">
-                  <div className="flex items-center gap-2 bg-white/95 px-3 py-2 rounded-full border border-slate-200 shadow-sm">
-                    <div className="h-7 w-7 rounded-full bg-sky-500 flex items-center justify-center text-[10px] font-semibold text-white tracking-tight">
-                      B
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="text-xs font-semibold tracking-tight text-slate-900">
-                        Bella Apartments
-                      </span>
-                      <span className="text-[10px] text-slate-500">Downtown Bonita Springs</span>
-                    </div>
+              <div className="absolute bottom-4 left-4 pointer-events-none">
+                <div className="flex items-center gap-2 bg-white/95 px-3 py-2 rounded-full border border-slate-200 shadow-lg">
+                  <div className="h-7 w-7 rounded-full bg-[#5b7a99] flex items-center justify-center text-[10px] font-semibold text-white tracking-tight">
+                    B
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-xs font-semibold tracking-tight text-slate-900">
+                      Bella Apartments
+                    </span>
+                    <span className="text-[10px] text-slate-500">Downtown Bonita Springs</span>
                   </div>
                 </div>
               </div>
