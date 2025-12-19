@@ -442,13 +442,11 @@ export default function Home() {
             </div>
 
             <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white h-[320px] sm:h-[380px]">
-              {/* Google Map embed */}
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14303.847821982857!2d-81.79453!3d26.339444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88db13d634d31e8d%3A0x4c0c0e1b1d0e1b0a!2sDowntown%20Bonita%20Springs%2C%20FL!5e0!3m2!1sen!2sus!4v1702934400000!5m2!1sen!2sus"
-                className="w-full h-full border-0"
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+              {/* Map image */}
+              <img 
+                src="/images/bella-temp-map.png" 
+                alt="Downtown Bonita Springs map with nearby attractions"
+                className="w-full h-full object-cover"
               />
 
               {/* Marker overlay */}
