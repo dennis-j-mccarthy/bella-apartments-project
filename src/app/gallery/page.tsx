@@ -17,6 +17,10 @@ const images = [
   { id: 10, src: '/images/the-bella-downtown-bonita-springs-fl-2nd-floor-fitness-center.jpg', alt: '2nd floor fitness center', category: 'amenities' },
   { id: 11, src: '/images/the-bella-downtown-bonita-springs-fl-3rd-floor-fitness-center.jpg', alt: '3rd floor fitness center', category: 'amenities' },
   { id: 12, src: '/images/bella-hero.png', alt: 'The Bella building exterior', category: 'exterior' },
+  { id: 13, src: '/images/bath1.png', alt: 'Luxurious bathroom with modern fixtures', category: 'interiors' },
+  { id: 14, src: '/images/br1.png', alt: 'Spacious bedroom with natural light', category: 'interiors' },
+  { id: 15, src: '/images/br2.png', alt: 'Elegant bedroom suite', category: 'interiors' },
+  { id: 16, src: '/images/lr1.png', alt: 'Open-concept living room', category: 'interiors' },
 ];
 
 type Category = 'all' | 'interiors' | 'amenities' | 'exterior';
@@ -165,7 +169,7 @@ export default function Gallery() {
                     <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <div className="p-2 rounded-full bg-white/90 text-slate-700">
                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-                          <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+                          <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                         </svg>
                       </div>
                     </div>
@@ -234,56 +238,58 @@ export default function Gallery() {
       {/* Lightbox */}
       {lightboxOpen && activeImageData && (
         <div
-          className="fixed inset-0 z-50 bg-slate-900/95 flex items-center justify-center"
+          className="fixed inset-0 z-50 bg-slate-900/50 flex items-center justify-center p-4"
           onClick={closeLightbox}
         >
-          <button
-            className="absolute top-6 right-6 p-3 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
-            onClick={closeLightbox}
-          >
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-              <path d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-
-          <button
-            className="absolute left-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
-            onClick={(e) => {
-              e.stopPropagation();
-              navigateLightbox('prev');
-            }}
-          >
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-              <path d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-
-          <button
-            className="absolute right-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
-            onClick={(e) => {
-              e.stopPropagation();
-              navigateLightbox('next');
-            }}
-          >
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
-              <path d="M9 5l7 7-7 7" />
-            </svg>
-          </button>
-
           <div
-            className="max-w-5xl max-h-[85vh] mx-4"
+            className="relative bg-white rounded-2xl max-w-5xl w-full shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
-              src={activeImageData.src}
-              alt={activeImageData.alt}
-              className="max-w-full max-h-[80vh] object-contain rounded-lg"
-            />
-            <div className="mt-4 text-center">
-              <p className="text-white text-sm font-light">{activeImageData.alt}</p>
-              <span className="inline-block mt-2 px-3 py-1 rounded-full bg-white/10 text-white/80 text-[10px] uppercase tracking-[0.16em]">
-                {activeImageData.category}
-              </span>
+            <button
+              className="absolute top-6 right-6 p-3 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors z-10"
+              onClick={closeLightbox}
+            >
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <path d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            <button
+              className="absolute left-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors z-10"
+              onClick={(e) => {
+                e.stopPropagation();
+                navigateLightbox('prev');
+              }}
+            >
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <path d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+
+            <button
+              className="absolute right-6 top-1/2 -translate-y-1/2 p-3 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors z-10"
+              onClick={(e) => {
+                e.stopPropagation();
+                navigateLightbox('next');
+              }}
+            >
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+                <path d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
+            <div className="p-8">
+              <img
+                src={activeImageData.src}
+                alt={activeImageData.alt}
+                className="w-full h-auto max-h-[70vh] object-contain rounded-lg"
+              />
+              <div className="mt-4 text-center">
+                <p className="text-slate-800 text-sm font-light">{activeImageData.alt}</p>
+                <span className="inline-block mt-2 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-[10px] uppercase tracking-[0.16em]">
+                  {activeImageData.category}
+                </span>
+              </div>
             </div>
           </div>
         </div>

@@ -1,10 +1,16 @@
 'use client';
 
 import Link from 'next/link';
+import { useState } from 'react';
 import Header from '@/components/Header';
 
 export default function Home() {
   const currentYear = new Date().getFullYear();
+  const [openFaq, setOpenFaq] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
@@ -422,8 +428,128 @@ export default function Home() {
           </div>
         </section>
 
+        {/* FAQ Section */}
+        <section className="border-t border-slate-200 bg-slate-50 py-16 sm:py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <p className="text-[11px] uppercase font-medium text-[#5b7a99] tracking-[0.22em] mb-4">
+                Frequently Asked Questions
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-light tracking-tight text-slate-900 font-playfair mb-4">
+                Everything you need to know about Bella
+              </h2>
+              <p className="text-sm text-slate-600 max-w-2xl mx-auto">
+                Get quick answers to common questions about living at Bella Apartments in downtown Bonita Springs, Florida.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {[
+                {
+                  question: "How far is Bella Apartments from downtown Bonita Springs?",
+                  answer: "Bella is located directly in downtown Bonita Springs, within easy walking distance to restaurants, shops, and entertainment. You can walk to Riverside Park in just 5 minutes, and most downtown attractions are within a 10-minute stroll."
+                },
+                {
+                  question: "What is the average rent at Bella Apartments?",
+                  answer: "Our luxury apartments start at $2,250 per month for 1-bedroom units and $2,350 per month for 2-bedroom units. All utilities except electric are included in your rent, with no hidden fees or surprise charges. Prices are competitive for new construction luxury apartments in downtown Bonita Springs."
+                },
+                {
+                  question: "Are pets allowed at Bella Apartments?",
+                  answer: "Yes, Bella is a pet-friendly community! We welcome cats and dogs with reasonable size and breed restrictions. Pet rent and deposit fees apply. Contact us for specific details about our pet policy and any breed restrictions."
+                },
+                {
+                  question: "What amenities are included at Bella?",
+                  answer: "Bella features resort-style amenities including a heated swimming pool, two state-of-the-art fitness centers (2nd and 3rd floors), covered parking with elevator access, additional climate-controlled storage units, secure bike storage, and a poolside BBQ area. Every apartment includes in-unit full-size washer and dryer, quartz countertops, stainless steel Energy Star appliances, custom closet systems, and individual climate control."
+                },
+                {
+                  question: "Is parking included with my apartment?",
+                  answer: "Yes, residents receive two free outdoor parking spaces with each apartment. Indoor parking spaces are also available to rent for a small fee. The indoor parking is located in an enclosed, brightly lit garage with direct elevator access to all floors."
+                },
+                {
+                  question: "How close is Bella to the beach?",
+                  answer: "Bella Apartments is 5 miles from Barefoot Beach in Bonita Beach, one of Southwest Florida's most beautiful and pristine Gulf Coast beaches. It's a quick 10-12 minute drive to enjoy the white sand beaches and turquoise waters of the Gulf of Mexico."
+                },
+                {
+                  question: "What utilities are included in the rent?",
+                  answer: "Water, sewer, and trash are included in your monthly rent. You are responsible for your electric and internet bills. This straightforward approach makes budgeting easier with most utilities covered."
+                },
+                {
+                  question: "Does Bella have a fitness center?",
+                  answer: "Yes, Bella features two modern fitness centers - one on the 2nd floor and one on the 3rd floor - equipped with state-of-the-art cardio and strength training equipment. Both are available 24/7 for residents."
+                },
+                {
+                  question: "What makes Bella different from other apartments in Bonita Springs?",
+                  answer: "Bella stands out as new construction with modern amenities at under $2,500/month in a prime downtown location. Key differentiators include European-style whisper-quiet climate control (not noisy forced air), custom-designed closet systems, elevator access, spacious soft-close cabinets, filtered water systems, and high-performance ventilation that vents directly outside. The building was designed by an experienced builder with attention to details often skipped in cookie-cutter complexes."
+                },
+                {
+                  question: "Is there an application fee and what is the lease term?",
+                  answer: "Standard application fees apply. We offer flexible lease terms including 12-month leases. Contact our leasing office for current specials, move-in costs, and available lease options."
+                },
+                {
+                  question: "Can I walk to restaurants and shops from Bella?",
+                  answer: "Absolutely! Bella's downtown Bonita Springs location puts you within walking distance of numerous restaurants, cafes, bars, shops, and entertainment venues. Riverside Park, with its live music and events, is just a 5-minute walk. The walkable downtown area is one of Bella's biggest advantages."
+                },
+                {
+                  question: "Are the apartments available furnished or unfurnished?",
+                  answer: "Bella apartments are leased unfurnished, allowing you to personalize your space. However, every unit comes with premium built-in features including quartz countertops, stainless steel appliances, in-unit washer/dryer, and custom closet organization systems."
+                },
+              ].map((faq, index) => (
+                <div
+                  key={index}
+                  className="border border-slate-200 rounded-2xl overflow-hidden bg-white hover:border-[#5b7a99] transition-colors"
+                >
+                  <button
+                    onClick={() => toggleFaq(index)}
+                    className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 group"
+                  >
+                    <h3 className="text-base font-medium text-slate-900 group-hover:text-[#5b7a99] transition-colors pr-4">
+                      {faq.question}
+                    </h3>
+                    <div className={`flex-shrink-0 w-6 h-6 rounded-full bg-slate-100 group-hover:bg-[#5b7a99]/10 flex items-center justify-center transition-all ${openFaq === index ? 'rotate-180' : ''}`}>
+                      <svg className="w-4 h-4 text-slate-600 group-hover:text-[#5b7a99]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                        <path d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </div>
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                      openFaq === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                    }`}
+                  >
+                    <div className="px-6 pb-5 pt-0">
+                      <p className="text-sm text-slate-600 leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-12 text-center p-6 bg-white rounded-2xl border border-slate-200">
+              <p className="text-sm text-slate-900 font-medium mb-2">Still have questions?</p>
+              <p className="text-sm text-slate-600 mb-4">Our leasing team is here to help you find your perfect home at Bella.</p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a href="tel:+12395550123" className="inline-flex items-center gap-2 text-sm text-[#5b7a99] hover:text-[#4a6580] font-medium">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  (239) 555-0123
+                </a>
+                <span className="hidden sm:inline text-slate-300">|</span>
+                <a href="mailto:hello@bellaapts.com" className="inline-flex items-center gap-2 text-sm text-[#5b7a99] hover:text-[#4a6580] font-medium">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                    <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  hello@bellaapts.com
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Map Row */}
-        <section className="border-b border-slate-200 bg-slate-50">
+        <section className="border-b border-slate-200 bg-white">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-6">
               <div>

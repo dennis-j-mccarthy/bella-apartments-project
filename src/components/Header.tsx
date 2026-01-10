@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 interface HeaderProps {
-  currentPage?: 'home' | 'apartments' | 'amenities' | 'gallery' | 'blog';
+  currentPage?: 'home' | 'apartments' | 'amenities' | 'features' | 'gallery' | 'blog';
 }
 
 export default function Header({ currentPage = 'home' }: HeaderProps) {
@@ -23,9 +23,9 @@ export default function Header({ currentPage = 'home' }: HeaderProps) {
   }, [isMenuOpen]);
 
   const navLinks = [
-    { href: '/', label: 'Home', key: 'home' },
     { href: '/floorplans', label: 'Apartments', key: 'apartments' },
     { href: '/amenities', label: 'Amenities', key: 'amenities' },
+    { href: '/features', label: 'Features', key: 'features' },
     { href: '/gallery', label: 'Gallery', key: 'gallery' },
     { href: '/blog', label: 'Bonita Springs', key: 'blog' },
   ];
@@ -52,7 +52,7 @@ export default function Header({ currentPage = 'home' }: HeaderProps) {
                 <Link
                   key={link.key}
                   href={link.href}
-                  className={`text-[11px] font-normal tracking-[0.18em] uppercase transition-colors ${
+                  className={`text-[13px] font-normal tracking-[0.18em] uppercase transition-colors ${
                     currentPage === link.key
                       ? 'text-[#5b7a99] hover:text-[#4a6580]'
                       : 'text-slate-500 hover:text-[#5b7a99]'
@@ -61,7 +61,7 @@ export default function Header({ currentPage = 'home' }: HeaderProps) {
                   {link.label}
                 </Link>
               ))}
-              <button className="text-[11px] font-medium tracking-[0.2em] uppercase px-4 py-2 rounded-full bg-[#5b7a99] text-white hover:bg-[#4a6580] transition-colors">
+              <button className="text-[13px] font-medium tracking-[0.2em] uppercase px-4 py-2 rounded-full bg-[#5b7a99] text-white hover:bg-[#4a6580] transition-colors">
                 Book a Showing
               </button>
             </nav>
