@@ -1,7 +1,8 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import Script from 'next/script';
 import Header from '@/components/Header';
 
 export default function Home() {
@@ -14,6 +15,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
+      <Script src="https://fast.wistia.com/player.js" strategy="lazyOnload" />
+      <Script src="https://fast.wistia.com/embed/77ggfom8lx.js" strategy="lazyOnload" />
+      
       <Header currentPage="home" />
 
       <main className="bg-slate-50 text-slate-900">
@@ -39,38 +43,23 @@ export default function Home() {
                 </div>
 
                 <div className="lg:col-span-3">
-                  {/* Hero Video Placeholder */}
-                  <div className="relative aspect-video rounded-3xl border border-slate-200 bg-slate-100 overflow-hidden">
-                    <img
-                      src="/images/bella-hero.png"
-                      alt="Bella Apartments hero"
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/15 via-slate-900/5 to-transparent" />
-                    <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
-                      <div>
-                        <p className="text-[11px] font-medium tracking-[0.22em] uppercase text-slate-50 drop-shadow-sm">
-                          Bella Walkthrough
-                        </p>
-                        <p className="text-xs text-slate-100 drop-shadow-sm">
-                          A glimpse into everyday life at Bella Apartments.
-                        </p>
-                      </div>
-                      <button className="inline-flex items-center gap-2 rounded-full bg-white/90 border border-white px-3 py-1.5 text-[11px] font-medium tracking-[0.18em] uppercase text-slate-900 backdrop-blur-sm hover:bg-white">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          strokeWidth="1.5"
-                          stroke="currentColor"
-                          fill="none"
-                        >
-                          <polygon points="9 7 17 12 9 17 9 7" fill="currentColor" />
-                        </svg>
-                        Play Tour
-                      </button>
-                    </div>
+                  {/* Hero Video */}
+                  <div className="relative aspect-video rounded-3xl border border-slate-200 overflow-hidden">
+                    <style>{`
+                      wistia-player[media-id='77ggfom8lx']:not(:defined) {
+                        background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/77ggfom8lx/swatch');
+                        display: block;
+                        filter: blur(5px);
+                        padding-top: 56.25%;
+                      }
+                      wistia-player[media-id='77ggfom8lx'] {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                      }
+                    `}</style>
+                    {/* @ts-ignore */}
+                    <wistia-player media-id="77ggfom8lx" aspect="1.7777777777777777"></wistia-player>
                   </div>
                 </div>
               </div>
@@ -104,6 +93,55 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Alt Hero - Full Width Video with Text Overlay (HIDDEN)
+        <section className="border-b border-slate-200 bg-slate-900">
+          <div className="relative min-h-[50vh] md:min-h-[60vh]">
+            <div className="absolute inset-0">
+              <style>{`
+                .alt-hero-video {
+                  width: 100vw !important;
+                  height: 100% !important;
+                  position: absolute;
+                  left: 50%;
+                  transform: translateX(-50%);
+                }
+                .alt-hero-video wistia-player {
+                  width: 100% !important;
+                  height: 100% !important;
+                }
+              `}</style>
+              <div className="alt-hero-video">
+                <wistia-player media-id="77ggfom8lx" aspect="1.7777777777777777"></wistia-player>
+              </div>
+            </div>
+            
+            <div className="relative z-10 flex items-center justify-center min-h-[50vh] md:min-h-[60vh] p-4">
+              <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 md:p-12 max-w-2xl text-center">
+                <p className="text-[11px] uppercase font-medium text-[#5b7a99] tracking-[0.22em]">
+                  NEW CONSTRUCTION, UNDER 2,500
+                </p>
+                <h2 className="sm:text-3xl lg:text-4xl text-2xl font-light text-slate-900 tracking-normal font-playfair mt-3">
+                  New Luxury Apartments in Downtown Bonita Springs
+                </h2>
+                <p className="text-sm text-slate-600 max-w-lg mx-auto mt-4">
+                  Luxury apartments, new construction, prime sought-after location, under $2,500
+                  with no price "gotchas". Every detail has been thoughtfully crafted to elevate your everyday
+                  experience.
+                </p>
+                <div className="flex flex-wrap items-center justify-center gap-3 mt-6">
+                  <button className="inline-flex items-center justify-center rounded-full bg-[#5b7a99] text-white px-5 py-2.5 text-[11px] font-medium tracking-[0.2em] uppercase hover:bg-[#4a6580]">
+                    Schedule a Tour
+                  </button>
+                  <button className="inline-flex items-center justify-center rounded-full border border-slate-300 px-5 py-2.5 text-[11px] font-medium tracking-[0.2em] uppercase text-slate-700 hover:border-[#5b7a99] hover:text-[#5b7a99] bg-white">
+                    View Availability
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        */}
 
         {/* Apartments Row */}
         <section className="border-b border-slate-200 bg-slate-50">
@@ -255,6 +293,68 @@ export default function Home() {
                     </svg>
                   </span>
                 </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials Row */}
+        <section className="border-b border-slate-200 bg-white">
+          <div className="sm:px-6 lg:px-8 max-w-6xl mx-auto py-14 px-4">
+            <div className="text-center mb-10">
+              <p className="text-[11px] uppercase font-medium text-[#5b7a99] tracking-[0.22em]">
+                RESIDENT STORIES
+              </p>
+              <h2 className="sm:text-3xl text-2xl font-light text-slate-900 font-playfair mt-2">
+                What our residents are saying.
+              </h2>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {/* Testimonial 1 */}
+              <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                <p className="text-sm text-slate-600 italic">
+                  "I walk to coffee, dinner, the farmers market—everything. After years in gated communities, 
+                  I finally feel like I'm part of a real neighborhood."
+                </p>
+                <p className="mt-4 text-xs font-medium text-slate-900">— Michelle R.</p>
+              </div>
+              
+              {/* Testimonial 2 */}
+              <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                <p className="text-sm text-slate-600 italic">
+                  "Downtown Bonita has something going on every weekend. Art walks, live music, festivals—we're 
+                  always in the middle of it all."
+                </p>
+                <p className="mt-4 text-xs font-medium text-slate-900">— David K.</p>
+              </div>
+              
+              {/* Testimonial 3 */}
+              <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                <p className="text-sm text-slate-600 italic">
+                  "It's boutique, it's elegant, it's not massive. You actually know your neighbors here. 
+                  That small building feel was exactly what we wanted."
+                </p>
+                <p className="mt-4 text-xs font-medium text-slate-900">— Karen T.</p>
+              </div>
+              
+              {/* Testimonial 4 */}
+              <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100">
+                <p className="text-sm text-slate-600 italic">
+                  "The porches are my favorite. Small but so well designed—perfect for morning coffee or 
+                  watching the sunset. A peaceful retreat."
+                </p>
+                <p className="mt-4 text-xs font-medium text-slate-900">— James P.</p>
+              </div>
+              
+              {/* Testimonial 5 */}
+              <div className="bg-slate-50 rounded-2xl p-6 border border-slate-100 md:col-span-2 lg:col-span-2">
+                <p className="text-sm text-slate-600 italic">
+                  "We moved from one of those cookie-cutter SWFL complexes with 300 units and zero character. 
+                  Bella is the complete opposite—thoughtful design, quality finishes, and real personality. 
+                  It doesn't feel like every other apartment in Florida."
+                </p>
+                <p className="mt-4 text-xs font-medium text-slate-900">— Robert & Linda M.</p>
               </div>
             </div>
           </div>

@@ -75,7 +75,7 @@ const features: Feature[] = [
     id: 8,
     title: 'Ventilation Systems',
     description: 'High-performance exhaust fans venting directly to the outside, ensuring optimal air quality and comfort in kitchens and bathrooms.',
-    image: '/images/placeholder-exhaust.jpg',
+    image: 'https://ik.imagekit.io/jnwpkntpm/DSC02365.jpg',
     category: 'Systems',
   },
   {

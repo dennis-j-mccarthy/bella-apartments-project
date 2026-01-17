@@ -249,26 +249,24 @@ export default function Amenities() {
               </div>
 
               {/* Item: Guest Suite */}
-              <div className="bg-white p-8 rounded-2xl border border-slate-200/60 hover:border-slate-300 hover:shadow-sm transition-all duration-300 group">
-                <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center mb-6 text-slate-900 group-hover:bg-[#5b7a99] group-hover:text-white transition-colors duration-300">
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                  >
-                    <path d="M2 4v16M2 8h18a2 2 0 0 1 2 2v10M2 17h20M6 8v9" />
-                  </svg>
+              <div className="bg-white rounded-2xl border border-slate-200/60 hover:border-slate-300 hover:shadow-sm transition-all duration-300 group overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src="https://ik.imagekit.io/jnwpkntpm/DSC02338.jpg"
+                    alt="Guest suite at Bella"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
-                <h3 className="text-xl font-medium text-slate-900 mb-3 font-playfair tracking-tight">
-                  Guest Suite
-                </h3>
-                <p className="text-base leading-relaxed text-slate-500 font-light">
-                  A dedicated guest suite is available for resident booking. When family or friends
-                  visit, they enjoy private accommodations within the building—a more comfortable
-                  arrangement than a hotel.
-                </p>
+                <div className="p-8">
+                  <h3 className="text-xl font-medium text-slate-900 mb-3 font-playfair tracking-tight">
+                    Guest Suite
+                  </h3>
+                  <p className="text-base leading-relaxed text-slate-500 font-light">
+                    A dedicated guest suite is available for resident booking. When family or friends
+                    visit, they enjoy private accommodations within the building—a more comfortable
+                    arrangement than a hotel.
+                  </p>
+                </div>
               </div>
 
               {/* Item: Poolside BBQ */}

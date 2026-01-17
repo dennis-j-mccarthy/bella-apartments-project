@@ -7,25 +7,35 @@ import Header from '@/components/Header';
 const images = [
   { id: 2, src: '/images/the-bella-downtown-bonita-springs-fl-gourmet-kitchen.jpg', alt: 'Gourmet kitchen', category: 'interiors' },
   { id: 3, src: '/images/the-bella-downtown-bonita-springs-fl-2br-2ba---kitchen.jpg', alt: 'Kitchen with modern finishes', category: 'interiors' },
-  { id: 8, src: '/images/the-bella-downtown-bonita-springs-fl-modern-design.jpg', alt: 'Modern design details', category: 'interiors' },
+  { id: 8, src: '/images/the-bella-downtown-bonita-springs-fl-modern-design.jpg', alt: 'Bella Apartments exterior', category: 'exterior' },
   { id: 13, src: '/images/bath1.png', alt: 'Luxurious bathroom with modern fixtures', category: 'interiors' },
   { id: 14, src: '/images/br1.png', alt: 'Spacious bedroom with natural light', category: 'interiors' },
   { id: 15, src: '/images/br2.png', alt: 'Elegant bedroom suite', category: 'interiors' },
   { id: 16, src: '/images/lr1.png', alt: 'Open-concept living room', category: 'interiors' },
-  { id: 17, src: '/images/patio1.jpg', alt: 'Private balcony', category: 'interiors' },
+  { id: 17, src: '/images/patio1.jpg', alt: 'Private balcony', category: 'amenities' },
   { id: 18, src: '/images/DSC01972.jpg', alt: 'Bella interior details', category: 'interiors' },
-  { id: 19, src: '/images/DSC02179.jpg', alt: 'Bella residence', category: 'interiors' },
-  { id: 20, src: '/images/DSC02181.jpg', alt: 'Bella residence details', category: 'interiors' },
+  { id: 19, src: '/images/DSC02179.jpg', alt: 'Closet systems', category: 'interiors' },
+  { id: 20, src: '/images/DSC02181.jpg', alt: 'Custom closet systems', category: 'interiors' },
   { id: 21, src: '/images/DSC02218.jpg', alt: 'Bella living space', category: 'interiors' },
   { id: 22, src: '/images/living1.jpg', alt: 'Living room with modern furnishings', category: 'interiors' },
-  { id: 23, src: '/images/DSC02132.jpg', alt: 'Bella interior', category: 'interiors' },
-  { id: 24, src: '/images/DSC02157.jpg', alt: 'Bella residence view', category: 'interiors' },
+  { id: 23, src: '/images/DSC02132.jpg', alt: 'Modern heating and cooling controls', category: 'amenities' },
+  { id: 24, src: '/images/DSC02157.jpg', alt: 'Gourmet kitchen features', category: 'interiors' },
   { id: 25, src: '/images/surfaces2.jpg', alt: 'Seamless kitchen surfaces', category: 'interiors' },
   { id: 26, src: '/images/bathroom1.jpg', alt: 'Modern bathroom', category: 'interiors' },
-  { id: 27, src: '/images/DSC02081.jpg', alt: 'Bella apartment details', category: 'interiors' },
+  { id: 27, src: '/images/DSC02081.jpg', alt: 'Premiere  appliances', category: 'amenities' },
   { id: 28, src: '/images/kitcehn2.jpg', alt: 'Kitchen with island', category: 'interiors' },
   { id: 29, src: '/images/kitchen1.jpg', alt: 'Gourmet kitchen design', category: 'interiors' },
   { id: 30, src: '/images/living2.jpg', alt: 'Living area with natural light', category: 'interiors' },
+  { id: 31, src: 'https://ik.imagekit.io/jnwpkntpm/DSC02373.jpg', alt: 'State of the art workout facility', category: 'amenities' },
+  { id: 32, src: 'https://ik.imagekit.io/jnwpkntpm/DSC02292.jpg', alt: 'Dogs are welcome!', category: 'amenities' },
+  { id: 33, src: 'https://ik.imagekit.io/jnwpkntpm/DSC02362.jpg', alt: 'Outdoor grill by the pool', category: 'amenities' },
+  { id: 34, src: 'https://ik.imagekit.io/jnwpkntpm/DSC02312.jpg', alt: 'Bella apartment', category: 'interiors' },
+  { id: 35, src: 'https://ik.imagekit.io/jnwpkntpm/DSC02336.jpg', alt: 'Bella residence details', category: 'interiors' },
+  { id: 36, src: 'https://ik.imagekit.io/jnwpkntpm/DSC02242.jpg', alt: 'Elegant exterior', category: 'exterior' },
+  { id: 37, src: 'https://ik.imagekit.io/jnwpkntpm/DSC02226.jpg', alt: 'Spacious balconies', category: 'amenities' },
+  { id: 38, src: 'https://ik.imagekit.io/jnwpkntpm/DSC02253.jpg', alt: 'Dramatic exterior', category: 'exterior' },
+  { id: 39, src: 'https://ik.imagekit.io/jnwpkntpm/DJI_0029.jpg', alt: 'Bella aerial view', category: 'exterior' },
+  { id: 40, src: 'https://ik.imagekit.io/jnwpkntpm/DJI_0034.jpg', alt: 'Minutes from beaches', category: 'exterior' },
 ];
 
 type Category = 'all' | 'interiors' | 'amenities' | 'exterior';
@@ -164,14 +174,15 @@ export default function Gallery() {
                       alt={image.alt}
                       className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                      <p className="text-white text-sm font-light">{image.alt}</p>
-                      <span className="inline-block mt-2 px-2 py-0.5 rounded-full bg-white/20 text-white text-[10px] uppercase tracking-[0.16em]">
+                    <div className="absolute top-3 right-3">
+                      <span className="px-2 py-1 rounded-full bg-white/90 text-slate-700 text-[10px] uppercase tracking-[0.16em] font-medium">
                         {image.category}
                       </span>
                     </div>
-                    <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 bg-white/90 px-3 py-2">
+                      <p className="text-slate-800 text-sm font-medium">{image.alt}</p>
+                    </div>
+                    <div className="absolute top-3 left-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <div className="p-2 rounded-full bg-white/90 text-slate-700">
                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
                           <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -229,13 +240,8 @@ export default function Gallery() {
               </button>
             </nav>
           </div>
-          <div className="mt-6 pt-4 border-t border-slate-200 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+          <div className="mt-6 pt-4 border-t border-slate-200">
             <p className="text-[11px] text-slate-500">© {currentYear} Bella Apartments. All rights reserved.</p>
-            <div className="flex gap-4 text-[11px] text-slate-500">
-              <span>Privacy</span>
-              <span>Terms</span>
-              <span>Fair Housing</span>
-            </div>
           </div>
         </div>
       </footer>
