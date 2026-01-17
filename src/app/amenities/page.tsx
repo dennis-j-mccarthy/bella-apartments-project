@@ -18,7 +18,7 @@ export default function Amenities() {
               Designed for Living
             </p>
             <h1 className="text-4xl sm:text-5xl font-normal text-slate-900 tracking-tight font-playfair">
-              Amenities &amp; Features
+              Amenities
             </h1>
           </div>
         </section>
@@ -207,51 +207,45 @@ export default function Amenities() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* Item: Enclosed Hallways */}
-              <div className="bg-white p-8 rounded-2xl border border-slate-200/60 hover:border-slate-300 hover:shadow-sm transition-all duration-300 group">
-                <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center mb-6 text-slate-900 group-hover:bg-[#5b7a99] group-hover:text-white transition-colors duration-300">
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                  >
-                    <path d="M9.59 4.59A2 2 0 1 1 11 8H2m10.59 11.41A2 2 0 1 0 14 16H2m15.73-8.27A2.5 2.5 0 1 1 19.5 12H2" />
-                  </svg>
+              <div className="bg-white rounded-2xl border border-slate-200/60 hover:border-slate-300 hover:shadow-sm transition-all duration-300 group overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src="/images/hall.jpg"
+                    alt="Enclosed hallways at Bella"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
-                <h3 className="text-xl font-medium text-slate-900 mb-3 font-playfair tracking-tight">
-                  Enclosed Hallways
-                </h3>
-                <p className="text-base leading-relaxed text-slate-500 font-light">
-                  Unlike the open-air breezeways typical of Florida construction, Bella features
-                  fully enclosed, climate-controlled corridors throughout. Hallways remain clean and
-                  protected regardless of weather conditions.
-                </p>
+                <div className="p-8">
+                  <h3 className="text-xl font-medium text-slate-900 mb-3 font-playfair tracking-tight">
+                    Enclosed Hallways
+                  </h3>
+                  <p className="text-base leading-relaxed text-slate-500 font-light">
+                    Unlike the open-air breezeways typical of Florida construction, Bella features
+                    fully enclosed, climate-controlled corridors throughout. No more leaves, dirt, 
+                    or debris blowing in—hallways remain clean and protected regardless of weather conditions.
+                  </p>
+                </div>
               </div>
 
               {/* Item: Covered Garage Parking */}
-              <div className="bg-white p-8 rounded-2xl border border-slate-200/60 hover:border-slate-300 hover:shadow-sm transition-all duration-300 group">
-                <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center mb-6 text-slate-900 group-hover:bg-[#5b7a99] group-hover:text-white transition-colors duration-300">
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                  >
-                    <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.5 2.8C1.4 11.3 1 12.1 1 13v3c0 .6.4 1 1 1h2" />
-                    <circle cx="7" cy="17" r="2" />
-                    <circle cx="17" cy="17" r="2" />
-                  </svg>
+              <div className="bg-white rounded-2xl border border-slate-200/60 hover:border-slate-300 hover:shadow-sm transition-all duration-300 group overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src="/images/parking.jpg"
+                    alt="Covered garage parking at Bella"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
-                <h3 className="text-xl font-medium text-slate-900 mb-3 font-playfair tracking-tight">
-                  Covered Garage Parking
-                </h3>
-                <p className="text-base leading-relaxed text-slate-500 font-light">
-                  The parking structure is fully covered, well-lit, and secured with controlled
-                  access. Vehicles remain protected from sun damage, afternoon storms, and debris.
-                  Dedicated bike racks included.
-                </p>
+                <div className="p-8">
+                  <h3 className="text-xl font-medium text-slate-900 mb-3 font-playfair tracking-tight">
+                    Covered Garage Parking
+                  </h3>
+                  <p className="text-base leading-relaxed text-slate-500 font-light">
+                    The parking structure is fully covered, well-lit, and secured with controlled
+                    access. Vehicles remain protected from sun damage, afternoon storms, and debris.
+                    Dedicated bike racks included.
+                  </p>
+                </div>
               </div>
 
               {/* Item: Guest Suite */}
@@ -277,101 +271,106 @@ export default function Amenities() {
                 </p>
               </div>
 
-              {/* Item: Keyless Entry */}
-              <div className="bg-white p-8 rounded-2xl border border-slate-200/60 hover:border-slate-300 hover:shadow-sm transition-all duration-300 group">
-                <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center mb-6 text-slate-900 group-hover:bg-[#5b7a99] group-hover:text-white transition-colors duration-300">
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                  >
-                    <path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2" />
-                    <circle cx="12" cy="12" r="3" />
-                  </svg>
+              {/* Item: Poolside BBQ */}
+              <div className="bg-white rounded-2xl border border-slate-200/60 hover:border-slate-300 hover:shadow-sm transition-all duration-300 group overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src="/images/the-bella-downtown-bonita-springs-fl-pool.jpg"
+                    alt="Poolside BBQ area at Bella"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
-                <h3 className="text-xl font-medium text-slate-900 mb-3 font-playfair tracking-tight">
-                  Keyless Entry
-                </h3>
-                <p className="text-base leading-relaxed text-slate-500 font-light">
-                  Modern electronic access controls are installed throughout the property. Entry is
-                  seamless and secure, with no physical keys required for building access, garage
-                  entry, or individual units.
-                </p>
+                <div className="p-8">
+                  <h3 className="text-xl font-medium text-slate-900 mb-3 font-playfair tracking-tight">
+                    Poolside BBQ
+                  </h3>
+                  <p className="text-base leading-relaxed text-slate-500 font-light">
+                    A professional-grade outdoor barbecue area sits adjacent to the resort-style pool,
+                    perfect for weekend cookouts, entertaining guests, or casual gatherings with neighbors.
+                  </p>
+                </div>
+              </div>
+
+              {/* Item: Keyless Entry */}
+              <div className="bg-white rounded-2xl border border-slate-200/60 hover:border-slate-300 hover:shadow-sm transition-all duration-300 group overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src="/images/keypad.jpg"
+                    alt="Keyless entry system at Bella"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-8">
+                  <h3 className="text-xl font-medium text-slate-900 mb-3 font-playfair tracking-tight">
+                    Keyless Entry
+                  </h3>
+                  <p className="text-base leading-relaxed text-slate-500 font-light">
+                    Modern electronic access controls are installed throughout the property. Entry is
+                    seamless and secure, with no physical keys required for building access, garage
+                    entry, or individual units.
+                  </p>
+                </div>
               </div>
 
               {/* Item: Security */}
-              <div className="bg-white p-8 rounded-2xl border border-slate-200/60 hover:border-slate-300 hover:shadow-sm transition-all duration-300 group">
-                <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center mb-6 text-slate-900 group-hover:bg-[#5b7a99] group-hover:text-white transition-colors duration-300">
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                  >
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                    <path d="m9 12 2 2 4-4" />
-                  </svg>
+              <div className="bg-white rounded-2xl border border-slate-200/60 hover:border-slate-300 hover:shadow-sm transition-all duration-300 group overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src="/images/security.jpg"
+                    alt="Security system at Bella"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
-                <h3 className="text-xl font-medium text-slate-900 mb-3 font-playfair tracking-tight">
-                  Security
-                </h3>
-                <p className="text-base leading-relaxed text-slate-500 font-light">
-                  Surveillance cameras monitor common areas and entry points. The garage is
-                  access-controlled, and exterior spaces are appropriately lit after dark. Security
-                  is present without being intrusive.
-                </p>
+                <div className="p-8">
+                  <h3 className="text-xl font-medium text-slate-900 mb-3 font-playfair tracking-tight">
+                    Security
+                  </h3>
+                  <p className="text-base leading-relaxed text-slate-500 font-light">
+                    Surveillance cameras monitor common areas and entry points. The garage is
+                    access-controlled, and exterior spaces are appropriately lit after dark. Security
+                    is present without being intrusive.
+                  </p>
+                </div>
               </div>
 
               {/* Item: Elevator */}
-              <div className="bg-white p-8 rounded-2xl border border-slate-200/60 hover:border-slate-300 hover:shadow-sm transition-all duration-300 group">
-                <div className="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center mb-6 text-slate-900 group-hover:bg-[#5b7a99] group-hover:text-white transition-colors duration-300">
-                  <svg
-                    className="w-5 h-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                  >
-                    <path d="M12 17V3M6 11l6-6 6 6M12 21v-4" />
-                  </svg>
+              <div className="bg-white rounded-2xl border border-slate-200/60 hover:border-slate-300 hover:shadow-sm transition-all duration-300 group overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src="/images/elevator.jpg"
+                    alt="Elevator at Bella"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
-                <h3 className="text-xl font-medium text-slate-900 mb-3 font-playfair tracking-tight">
-                  Elevator
-                </h3>
-                <p className="text-base leading-relaxed text-slate-500 font-light">
-                  A central elevator provides access to all floors, accommodating residents and
-                  guests with ease.
-                </p>
+                <div className="p-8">
+                  <h3 className="text-xl font-medium text-slate-900 mb-3 font-playfair tracking-tight">
+                    Elevator
+                  </h3>
+                  <p className="text-base leading-relaxed text-slate-500 font-light">
+                    A central elevator provides access to all floors, accommodating residents and
+                    guests with ease.
+                  </p>
+                </div>
               </div>
 
-              {/* Item: Storage - Full Width */}
-              <div className="bg-white p-8 rounded-2xl border border-slate-200/60 hover:border-slate-300 hover:shadow-sm transition-all duration-300 group md:col-span-2 lg:col-span-3 lg:w-2/3 lg:mx-auto">
-                <div className="flex flex-col lg:flex-row items-center lg:items-start text-center lg:text-left gap-6">
-                  <div className="w-10 h-10 rounded-full bg-slate-50 flex-shrink-0 flex items-center justify-center text-slate-900 group-hover:bg-[#5b7a99] group-hover:text-white transition-colors duration-300">
-                    <svg
-                      className="w-5 h-5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                    >
-                      <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z" />
-                      <path d="m3.3 7 8.7 5 8.7-5M12 22V12" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-medium text-slate-900 mb-3 font-playfair tracking-tight">
-                      Private Storage
-                    </h3>
-                    <p className="text-base leading-relaxed text-slate-500 font-light">
-                      Private storage closets are available for lease, offering additional space for
-                      seasonal items, sporting equipment, or personal belongings beyond what unit
-                      closets accommodate.
-                    </p>
-                  </div>
+              {/* Item: Storage */}
+              <div className="bg-white rounded-2xl border border-slate-200/60 hover:border-slate-300 hover:shadow-sm transition-all duration-300 group overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src="/images/storage.jpg"
+                    alt="Private storage at Bella"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-8">
+                  <h3 className="text-xl font-medium text-slate-900 mb-3 font-playfair tracking-tight">
+                    Private Storage
+                  </h3>
+                  <p className="text-base leading-relaxed text-slate-500 font-light">
+                    Private storage closets are available for lease, offering additional space for
+                    seasonal items, sporting equipment, or personal belongings beyond what unit
+                    closets accommodate.
+                  </p>
                 </div>
               </div>
             </div>

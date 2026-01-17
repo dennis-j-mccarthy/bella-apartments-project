@@ -5,22 +5,27 @@ import { useState } from 'react';
 import Header from '@/components/Header';
 
 const images = [
-  { id: 1, src: '/images/the-bella-downtown-bonita-springs-fl-living-room.jpg', alt: 'Modern living room', category: 'interiors' },
   { id: 2, src: '/images/the-bella-downtown-bonita-springs-fl-gourmet-kitchen.jpg', alt: 'Gourmet kitchen', category: 'interiors' },
   { id: 3, src: '/images/the-bella-downtown-bonita-springs-fl-2br-2ba---kitchen.jpg', alt: 'Kitchen with modern finishes', category: 'interiors' },
-  { id: 4, src: '/images/the-bella-downtown-bonita-springs-fl-primary-bedroom.jpg', alt: 'Primary bedroom', category: 'interiors' },
-  { id: 5, src: '/images/the-bella-downtown-bonita-springs-fl-second-bedroom.jpg', alt: 'Second bedroom', category: 'interiors' },
-  { id: 6, src: '/images/the-bella-downtown-bonita-springs-fl-primary-bathroomwalk-in-closet.jpg', alt: 'Primary bathroom and walk-in closet', category: 'interiors' },
-  { id: 7, src: '/images/the-bella-downtown-bonita-springs-fl-second-bathroom.jpg', alt: 'Second bathroom', category: 'interiors' },
   { id: 8, src: '/images/the-bella-downtown-bonita-springs-fl-modern-design.jpg', alt: 'Modern design details', category: 'interiors' },
-  { id: 9, src: '/images/the-bella-downtown-bonita-springs-fl-pool.jpg', alt: 'Resort-style swimming pool', category: 'amenities' },
-  { id: 10, src: '/images/the-bella-downtown-bonita-springs-fl-2nd-floor-fitness-center.jpg', alt: '2nd floor fitness center', category: 'amenities' },
-  { id: 11, src: '/images/the-bella-downtown-bonita-springs-fl-3rd-floor-fitness-center.jpg', alt: '3rd floor fitness center', category: 'amenities' },
-  { id: 12, src: '/images/bella-hero.png', alt: 'The Bella building exterior', category: 'exterior' },
   { id: 13, src: '/images/bath1.png', alt: 'Luxurious bathroom with modern fixtures', category: 'interiors' },
   { id: 14, src: '/images/br1.png', alt: 'Spacious bedroom with natural light', category: 'interiors' },
   { id: 15, src: '/images/br2.png', alt: 'Elegant bedroom suite', category: 'interiors' },
   { id: 16, src: '/images/lr1.png', alt: 'Open-concept living room', category: 'interiors' },
+  { id: 17, src: '/images/patio1.jpg', alt: 'Private balcony', category: 'interiors' },
+  { id: 18, src: '/images/DSC01972.jpg', alt: 'Bella interior details', category: 'interiors' },
+  { id: 19, src: '/images/DSC02179.jpg', alt: 'Bella residence', category: 'interiors' },
+  { id: 20, src: '/images/DSC02181.jpg', alt: 'Bella residence details', category: 'interiors' },
+  { id: 21, src: '/images/DSC02218.jpg', alt: 'Bella living space', category: 'interiors' },
+  { id: 22, src: '/images/living1.jpg', alt: 'Living room with modern furnishings', category: 'interiors' },
+  { id: 23, src: '/images/DSC02132.jpg', alt: 'Bella interior', category: 'interiors' },
+  { id: 24, src: '/images/DSC02157.jpg', alt: 'Bella residence view', category: 'interiors' },
+  { id: 25, src: '/images/surfaces2.jpg', alt: 'Seamless kitchen surfaces', category: 'interiors' },
+  { id: 26, src: '/images/bathroom1.jpg', alt: 'Modern bathroom', category: 'interiors' },
+  { id: 27, src: '/images/DSC02081.jpg', alt: 'Bella apartment details', category: 'interiors' },
+  { id: 28, src: '/images/kitcehn2.jpg', alt: 'Kitchen with island', category: 'interiors' },
+  { id: 29, src: '/images/kitchen1.jpg', alt: 'Gourmet kitchen design', category: 'interiors' },
+  { id: 30, src: '/images/living2.jpg', alt: 'Living area with natural light', category: 'interiors' },
 ];
 
 type Category = 'all' | 'interiors' | 'amenities' | 'exterior';

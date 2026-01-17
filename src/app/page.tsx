@@ -118,9 +118,9 @@ export default function Home() {
                 </h2>
                 <p className="text-sm text-slate-600 max-w-xl mt-3">
                   True luxury lives in the details most apartments overlook. We obsess over the
-                  quiet moments—the soft-close cabinets, the whisper-quiet dishwasher during dinner.
-                  Premium hardware, thoughtfully insulated walls, and whisper-quiet cooling systems
-                  work in harmony to create a serene sanctuary where every detail elevates your
+                  quiet moments—the soft-close cabinets, the serene dishwasher during dinner.
+                  Premium hardware, thoughtfully insulated walls, and quiet cooling systems
+                  work in harmony to create a peaceful sanctuary where every detail elevates your
                   daily life. Because the difference between ordinary and luxury lies in the little
                   things.
                 </p>
@@ -147,13 +147,13 @@ export default function Home() {
                     </div>
                     <div className="p-4">
                       <p className="text-xs font-medium tracking-[0.16em] uppercase text-slate-500">
-                        One Bedroom
+                        Modern Design
                       </p>
                       <h3 className="mt-1 text-sm font-semibold tracking-tight text-slate-900 font-playfair">
-                        1 Bed · 1 Bath · Balcony
+                        Clean Lines & Open Spaces
                       </h3>
                       <p className="mt-2 text-xs text-slate-600">
-                        Open-concept living with south-facing windows and a private outdoor retreat.
+                        Contemporary layouts with abundant natural light and thoughtful flow between living spaces.
                       </p>
                     </div>
                   </div>
@@ -168,13 +168,13 @@ export default function Home() {
                     </div>
                     <div className="p-4">
                       <p className="text-xs font-medium tracking-[0.16em] uppercase text-slate-500">
-                        Two Bedroom
+                        Top Quality Materials
                       </p>
                       <h3 className="mt-1 text-sm font-semibold tracking-tight text-slate-900 font-playfair">
-                        Corner 2 Bed · 2 Bath
+                        Premium Finishes Throughout
                       </h3>
                       <p className="mt-2 text-xs text-slate-600">
-                        Wraparound windows, split bedrooms, and an entertainer's kitchen.
+                        Quartz countertops, designer fixtures, and high-end appliances in every residence.
                       </p>
                     </div>
                   </div>
@@ -189,13 +189,13 @@ export default function Home() {
                     </div>
                     <div className="p-4">
                       <p className="text-xs font-medium tracking-[0.16em] uppercase text-slate-500">
-                        Penthouse
+                        Luxury Apartment Living
                       </p>
                       <h3 className="mt-1 text-sm font-semibold tracking-tight text-slate-900 font-playfair">
-                        3 Bed · 2.5 Bath · Terrace
+                        Elevated Everyday Comfort
                       </h3>
                       <p className="mt-2 text-xs text-slate-600">
-                        Elevated ceilings, expansive terrace, and sweeping Bonita Springs views.
+                        Spacious bedrooms, walk-in closets, and spa-inspired bathrooms for refined daily living.
                       </p>
                     </div>
                   </div>
