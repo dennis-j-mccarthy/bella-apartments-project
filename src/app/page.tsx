@@ -1,13 +1,15 @@
 'use client';
 
 import Link from 'next/link';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Script from 'next/script';
 import Header from '@/components/Header';
+import ContactFormModal from '@/components/ContactFormModal';
 
 export default function Home() {
   const currentYear = new Date().getFullYear();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
@@ -18,7 +20,7 @@ export default function Home() {
       <Script src="https://fast.wistia.com/player.js" strategy="lazyOnload" />
       <Script src="https://fast.wistia.com/embed/77ggfom8lx.js" strategy="lazyOnload" />
       
-      <Header currentPage="home" />
+      <Header currentPage="home" onBookShowing={() => setIsContactModalOpen(true)} />
 
       <main className="bg-slate-50 text-slate-900">
         {/* Hero Row */}
@@ -81,13 +83,12 @@ export default function Home() {
                     feel is in person.
                   </p>
                   <div className="flex flex-wrap items-center gap-3">
-                    <button className="inline-flex items-center justify-center rounded-full bg-[#5b7a99] text-white px-4 py-2 text-[11px] font-medium tracking-[0.2em] uppercase hover:bg-[#4a6580]">
+                    <button
+                      onClick={() => setIsContactModalOpen(true)}
+                      className="inline-flex items-center justify-center rounded-full bg-[#5b7a99] text-white px-4 py-2 text-[11px] font-medium tracking-[0.2em] uppercase hover:bg-[#4a6580]">
                       Schedule a Tour
                     </button>
-                    <button className="inline-flex items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-[11px] font-medium tracking-[0.2em] uppercase text-slate-700 hover:border-[#5b7a99] hover:text-[#5b7a99] bg-white">
-                      View Availability
-                    </button>
-                  </div>
+                                      </div>
                 </div>
               </div>
             </div>
@@ -130,13 +131,12 @@ export default function Home() {
                   experience.
                 </p>
                 <div className="flex flex-wrap items-center justify-center gap-3 mt-6">
-                  <button className="inline-flex items-center justify-center rounded-full bg-[#5b7a99] text-white px-5 py-2.5 text-[11px] font-medium tracking-[0.2em] uppercase hover:bg-[#4a6580]">
+                  <button
+                    onClick={() => setIsContactModalOpen(true)}
+                    className="inline-flex items-center justify-center rounded-full bg-[#5b7a99] text-white px-5 py-2.5 text-[11px] font-medium tracking-[0.2em] uppercase hover:bg-[#4a6580]">
                     Schedule a Tour
                   </button>
-                  <button className="inline-flex items-center justify-center rounded-full border border-slate-300 px-5 py-2.5 text-[11px] font-medium tracking-[0.2em] uppercase text-slate-700 hover:border-[#5b7a99] hover:text-[#5b7a99] bg-white">
-                    View Availability
-                  </button>
-                </div>
+                                  </div>
               </div>
             </div>
           </div>
@@ -630,18 +630,18 @@ export default function Home() {
               <p className="text-sm text-slate-900 font-medium mb-2">Still have questions?</p>
               <p className="text-sm text-slate-600 mb-4">Our leasing team is here to help you find your perfect home at Bella.</p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                <a href="tel:+12395550123" className="inline-flex items-center gap-2 text-sm text-[#5b7a99] hover:text-[#4a6580] font-medium">
+                <a href="tel:+13125041835" className="inline-flex items-center gap-2 text-sm text-[#5b7a99] hover:text-[#4a6580] font-medium">
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                     <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  (239) 555-0123
+                  (312) 504-1835
                 </a>
                 <span className="hidden sm:inline text-slate-300">|</span>
-                <a href="mailto:hello@bellaapts.com" className="inline-flex items-center gap-2 text-sm text-[#5b7a99] hover:text-[#4a6580] font-medium">
+                <a href="mailto:bellabonitasprings@gmail.com" className="inline-flex items-center gap-2 text-sm text-[#5b7a99] hover:text-[#4a6580] font-medium">
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                     <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                  hello@bellaapts.com
+                  bellabonitasprings@gmail.com
                 </a>
               </div>
             </div>
@@ -667,10 +667,15 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white h-[320px] sm:h-[380px]">
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=10575+Crockett+Street,+Bonita+Springs,+FL+34145"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white h-[320px] sm:h-[380px] block cursor-pointer hover:border-[#5b7a99] transition-colors"
+            >
               {/* Map image */}
-              <img 
-                src="/images/bella-temp-map.png" 
+              <img
+                src="/images/bella-temp-map.png"
                 alt="Downtown Bonita Springs map with nearby attractions"
                 className="w-full h-full object-cover"
               />
@@ -689,7 +694,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
+            </a>
           </div>
         </section>
       </main>
@@ -726,7 +731,9 @@ export default function Home() {
               <Link href="/blog" className="text-slate-500 hover:text-[#5b7a99]">
                 Bonita Springs
               </Link>
-              <button className="px-4 py-2 rounded-full bg-[#5b7a99] text-white font-medium hover:bg-[#4a6580]">
+              <button
+                onClick={() => setIsContactModalOpen(true)}
+                className="px-4 py-2 rounded-full bg-[#5b7a99] text-white font-medium hover:bg-[#4a6580]">
                 Book a Showing
               </button>
             </nav>
@@ -736,14 +743,22 @@ export default function Home() {
             <p className="text-[11px] text-slate-500">
               © {currentYear} Bella Apartments. All rights reserved.
             </p>
-            <div className="flex gap-4 text-[11px] text-slate-500">
-              <span>Privacy</span>
-              <span>Terms</span>
-              <span>Fair Housing</span>
-            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=10575+Crockett+Street,+Bonita+Springs,+FL+34145"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-slate-600 hover:text-[#5b7a99] transition-colors"
+            >
+              10575 Crockett Street, Bonita Springs, FL 34145
+            </a>
           </div>
         </div>
       </footer>
+
+      <ContactFormModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+      />
     </div>
   );
 }

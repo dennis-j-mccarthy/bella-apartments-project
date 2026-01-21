@@ -5,9 +5,10 @@ import { useState, useEffect } from 'react';
 
 interface HeaderProps {
   currentPage?: 'home' | 'apartments' | 'amenities' | 'features' | 'gallery' | 'blog';
+  onBookShowing?: () => void;
 }
 
-export default function Header({ currentPage = 'home' }: HeaderProps) {
+export default function Header({ currentPage = 'home', onBookShowing }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Prevent body scroll when menu is open
@@ -61,7 +62,10 @@ export default function Header({ currentPage = 'home' }: HeaderProps) {
                   {link.label}
                 </Link>
               ))}
-              <button className="text-[13px] font-medium tracking-[0.2em] uppercase px-4 py-2 rounded-full bg-[#5b7a99] text-white hover:bg-[#4a6580] transition-colors">
+              <button
+                onClick={onBookShowing}
+                className="text-[13px] font-medium tracking-[0.2em] uppercase px-4 py-2 rounded-full bg-[#5b7a99] text-white hover:bg-[#4a6580] transition-colors"
+              >
                 Book a Showing
               </button>
             </nav>
@@ -178,16 +182,19 @@ export default function Header({ currentPage = 'home' }: HeaderProps) {
               transitionDelay: isMenuOpen ? '500ms' : '0ms',
             }}
           >
-            <button className="w-full text-[12px] font-medium tracking-[0.2em] uppercase px-6 py-4 rounded-full bg-[#5b7a99] text-white hover:bg-[#4a6580] transition-colors shadow-lg shadow-[#5b7a99]/20">
+            <button
+              onClick={() => { setIsMenuOpen(false); onBookShowing?.(); }}
+              className="w-full text-[12px] font-medium tracking-[0.2em] uppercase px-6 py-4 rounded-full bg-[#5b7a99] text-white hover:bg-[#4a6580] transition-colors shadow-lg shadow-[#5b7a99]/20"
+            >
               Book a Showing
             </button>
             <div className="mt-6 flex items-center justify-center gap-6 text-[11px] text-slate-500 tracking-[0.1em]">
-              <a href="tel:+1234567890" className="hover:text-[#5b7a99] transition-colors">
-                (239) 555-0123
+              <a href="tel:+13125041835" className="hover:text-[#5b7a99] transition-colors">
+                (312) 504-1835
               </a>
               <span className="w-1 h-1 rounded-full bg-slate-300" />
-              <a href="mailto:hello@bellaapts.com" className="hover:text-[#5b7a99] transition-colors">
-                hello@bellaapts.com
+              <a href="mailto:bellabonitasprings@gmail.com" className="hover:text-[#5b7a99] transition-colors">
+                bellabonitasprings@gmail.com
               </a>
             </div>
           </div>

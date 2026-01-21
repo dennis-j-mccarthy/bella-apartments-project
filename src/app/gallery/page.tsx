@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import Header from '@/components/Header';
+import ContactFormModal from '@/components/ContactFormModal';
 
 const images = [
   { id: 2, src: '/images/the-bella-downtown-bonita-springs-fl-gourmet-kitchen.jpg', alt: 'Gourmet kitchen', category: 'interiors' },
@@ -45,6 +46,7 @@ export default function Gallery() {
   const [filter, setFilter] = useState<Category>('all');
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [activeImage, setActiveImage] = useState<number | null>(null);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const filteredImages = images.filter((img) => {
     if (filter === 'all') return true;
@@ -86,7 +88,7 @@ export default function Gallery() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
-      <Header currentPage="gallery" />
+      <Header currentPage="gallery" onBookShowing={() => setIsContactModalOpen(true)} />
 
       <main className="flex-1 bg-gradient-to-b from-slate-50 via-slate-50 to-slate-100">
         {/* Hero */}
@@ -206,7 +208,10 @@ export default function Gallery() {
               Photos only tell part of the story. Schedule a tour to experience Bella in person.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-[#5b7a99] text-white px-8 py-3.5 text-[11px] font-semibold tracking-[0.2em] uppercase hover:bg-[#4a6580] transition-all shadow-sm">
+              <button
+                onClick={() => setIsContactModalOpen(true)}
+                className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-[#5b7a99] text-white px-8 py-3.5 text-[11px] font-semibold tracking-[0.2em] uppercase hover:bg-[#4a6580] transition-all shadow-sm"
+              >
                 Schedule a Tour
               </button>
               <Link
@@ -235,13 +240,24 @@ export default function Gallery() {
               <Link href="/amenities" className="text-slate-500 hover:text-[#5b7a99]">Amenities</Link>
               <Link href="/gallery" className="text-[#5b7a99]">Gallery</Link>
               <Link href="/blog" className="text-slate-500 hover:text-[#5b7a99]">Bonita Springs</Link>
-              <button className="px-4 py-2 rounded-full bg-[#5b7a99] text-white font-medium hover:bg-[#4a6580]">
+              <button
+                onClick={() => setIsContactModalOpen(true)}
+                className="px-4 py-2 rounded-full bg-[#5b7a99] text-white font-medium hover:bg-[#4a6580]"
+              >
                 Book a Showing
               </button>
             </nav>
           </div>
-          <div className="mt-6 pt-4 border-t border-slate-200">
+          <div className="mt-6 pt-4 border-t border-slate-200 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
             <p className="text-[11px] text-slate-500">© {currentYear} Bella Apartments. All rights reserved.</p>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=10575+Crockett+Street,+Bonita+Springs,+FL+34145"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-slate-600 hover:text-[#5b7a99] transition-colors"
+            >
+              10575 Crockett Street, Bonita Springs, FL 34145
+            </a>
           </div>
         </div>
       </footer>
@@ -305,6 +321,11 @@ export default function Gallery() {
           </div>
         </div>
       )}
+
+      <ContactFormModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+      />
     </div>
   );
 }

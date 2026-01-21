@@ -1,14 +1,17 @@
 'use client';
 
 import Link from 'next/link';
+import { useState } from 'react';
 import Header from '@/components/Header';
+import ContactFormModal from '@/components/ContactFormModal';
 
 export default function Amenities() {
   const currentYear = new Date().getFullYear();
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
-      <Header currentPage="amenities" />
+      <Header currentPage="amenities" onBookShowing={() => setIsContactModalOpen(true)} />
 
       <main>
         {/* Page Title */}
@@ -385,11 +388,11 @@ export default function Amenities() {
               Schedule a private tour to see our amenities and available residences.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-[#5b7a99] text-white px-8 py-3.5 text-[11px] font-semibold tracking-[0.2em] uppercase hover:bg-[#4a6580] transition-all shadow-sm">
+              <button
+                onClick={() => setIsContactModalOpen(true)}
+                className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-[#5b7a99] text-white px-8 py-3.5 text-[11px] font-semibold tracking-[0.2em] uppercase hover:bg-[#4a6580] transition-all shadow-sm"
+              >
                 Schedule a Tour
-              </button>
-              <button className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-slate-200 px-8 py-3.5 text-[11px] font-semibold tracking-[0.2em] uppercase text-slate-600 hover:border-[#5b7a99] hover:text-[#5b7a99] bg-white transition-all">
-                View Availability
               </button>
             </div>
           </div>
@@ -428,7 +431,10 @@ export default function Amenities() {
               <Link href="/blog" className="text-slate-500 hover:text-[#5b7a99]">
                 Bonita Springs
               </Link>
-              <button className="px-4 py-2 rounded-full bg-[#5b7a99] text-white font-medium hover:bg-[#4a6580]">
+              <button
+                onClick={() => setIsContactModalOpen(true)}
+                className="px-4 py-2 rounded-full bg-[#5b7a99] text-white font-medium hover:bg-[#4a6580]"
+              >
                 Book a Showing
               </button>
             </nav>
@@ -438,14 +444,22 @@ export default function Amenities() {
             <p className="text-[11px] text-slate-500">
               © {currentYear} Bella Apartments. All rights reserved.
             </p>
-            <div className="flex gap-4 text-[11px] text-slate-500">
-              <span>Privacy</span>
-              <span>Terms</span>
-              <span>Fair Housing</span>
-            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=10575+Crockett+Street,+Bonita+Springs,+FL+34145"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-slate-600 hover:text-[#5b7a99] transition-colors"
+            >
+              10575 Crockett Street, Bonita Springs, FL 34145
+            </a>
           </div>
         </div>
       </footer>
+
+      <ContactFormModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+      />
     </div>
   );
 }

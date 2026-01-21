@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import Header from '@/components/Header';
+import ContactFormModal from '@/components/ContactFormModal';
 
 const floorplans = [
   { unit: '201', beds: 2, baths: 2, sqft: 1100, floor: 2, balcony: true, ada: false, image: '/images/201.png.webp' },
@@ -27,6 +28,7 @@ export default function Floorplans() {
   const currentYear = new Date().getFullYear();
   const [filter, setFilter] = useState<'all' | '1br' | '2br'>('all');
   const [selectedPlan, setSelectedPlan] = useState<typeof floorplans[0] | null>(null);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   const filteredPlans = floorplans.filter((plan) => {
     if (filter === 'all') return true;
@@ -49,7 +51,7 @@ export default function Floorplans() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
-      <Header currentPage="apartments" />
+      <Header currentPage="apartments" onBookShowing={() => setIsContactModalOpen(true)} />
 
       <main className="flex-1 bg-gradient-to-b from-slate-50 via-slate-50 to-slate-100">
         {/* Hero */}
@@ -71,30 +73,6 @@ export default function Floorplans() {
                   two-bedrooms with balconies. Every layout is optimized for natural light,
                   storage, and everyday luxury living.
                 </p>
-              </div>
-
-              <div className="w-full max-w-sm lg:w-auto flex flex-col gap-3 text-xs text-slate-600">
-                <div className="flex items-center justify-between gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 shadow-sm">
-                  <div className="flex flex-col">
-                    <span className="text-[11px] font-medium tracking-[0.16em] uppercase text-slate-500">
-                      Current Availability
-                    </span>
-                    <span className="text-sm text-slate-900">Studios – 2 BR + Den</span>
-                  </div>
-                  <span className="text-[11px] text-slate-500">Updated daily</span>
-                </div>
-                <p className="text-xs text-slate-500">
-                  Availability changes frequently. Share your ideal move-in date and we'll
-                  tailor options within minutes.
-                </p>
-                <div className="flex flex-wrap gap-3">
-                  <button className="inline-flex flex-1 items-center justify-center rounded-full bg-[#5b7a99] text-white px-4 py-2 text-[11px] font-medium tracking-[0.2em] uppercase hover:bg-[#4a6580] transition-colors">
-                    Book a Showing
-                  </button>
-                  <button className="inline-flex flex-1 items-center justify-center rounded-full border border-slate-300 px-4 py-2 text-[11px] font-medium tracking-[0.2em] uppercase text-slate-700 hover:border-[#5b7a99] hover:text-[#5b7a99] bg-white transition-colors">
-                    Download Brochure
-                  </button>
-                </div>
               </div>
             </div>
           </div>
@@ -329,13 +307,13 @@ export default function Floorplans() {
               Schedule a private tour to see our residences in person.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-[#5b7a99] text-white px-8 py-3.5 text-[11px] font-semibold tracking-[0.2em] uppercase hover:bg-[#4a6580] transition-all shadow-sm">
+              <button
+                onClick={() => setIsContactModalOpen(true)}
+                className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-[#5b7a99] text-white px-8 py-3.5 text-[11px] font-semibold tracking-[0.2em] uppercase hover:bg-[#4a6580] transition-all shadow-sm"
+              >
                 Schedule a Tour
               </button>
-              <button className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-slate-200 px-8 py-3.5 text-[11px] font-semibold tracking-[0.2em] uppercase text-slate-600 hover:border-[#5b7a99] hover:text-[#5b7a99] bg-white transition-all">
-                View Availability
-              </button>
-            </div>
+                          </div>
           </div>
         </section>
       </main>
@@ -355,18 +333,24 @@ export default function Floorplans() {
               <Link href="/amenities" className="text-slate-500 hover:text-[#5b7a99]">Amenities</Link>
               <Link href="/gallery" className="text-slate-500 hover:text-[#5b7a99]">Gallery</Link>
               <Link href="/blog" className="text-slate-500 hover:text-[#5b7a99]">Bonita Springs</Link>
-              <button className="px-4 py-2 rounded-full bg-[#5b7a99] text-white font-medium hover:bg-[#4a6580]">
+              <button
+                onClick={() => setIsContactModalOpen(true)}
+                className="px-4 py-2 rounded-full bg-[#5b7a99] text-white font-medium hover:bg-[#4a6580]"
+              >
                 Book a Showing
               </button>
             </nav>
           </div>
           <div className="mt-6 pt-4 border-t border-slate-200 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
             <p className="text-[11px] text-slate-500">© {currentYear} Bella Apartments. All rights reserved.</p>
-            <div className="flex gap-4 text-[11px] text-slate-500">
-              <span>Privacy</span>
-              <span>Terms</span>
-              <span>Fair Housing</span>
-            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=10575+Crockett+Street,+Bonita+Springs,+FL+34145"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-slate-600 hover:text-[#5b7a99] transition-colors"
+            >
+              10575 Crockett Street, Bonita Springs, FL 34145
+            </a>
           </div>
         </div>
       </footer>
@@ -517,17 +501,22 @@ export default function Floorplans() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-3">
-                <button className="flex-1 inline-flex items-center justify-center rounded-full bg-[#5b7a99] text-white px-6 py-3 text-[11px] font-semibold tracking-[0.2em] uppercase hover:bg-[#4a6580] transition-all">
+                <button
+                  onClick={() => setIsContactModalOpen(true)}
+                  className="flex-1 inline-flex items-center justify-center rounded-full bg-[#5b7a99] text-white px-6 py-3 text-[11px] font-semibold tracking-[0.2em] uppercase hover:bg-[#4a6580] transition-all"
+                >
                   Schedule a Tour
                 </button>
-                <button className="flex-1 inline-flex items-center justify-center rounded-full border border-slate-200 px-6 py-3 text-[11px] font-semibold tracking-[0.2em] uppercase text-slate-600 hover:border-[#5b7a99] hover:text-[#5b7a99] bg-white transition-all">
-                  Check Availability
-                </button>
-              </div>
+                              </div>
             </div>
           </div>
         </div>
       )}
+
+      <ContactFormModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+      />
     </div>
   );
 }

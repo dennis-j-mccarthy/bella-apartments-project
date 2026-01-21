@@ -1,44 +1,45 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Header from '@/components/Header';
+import ContactFormModal from '@/components/ContactFormModal';
 
 const blogPosts = [
   {
-    slug: 'downtown-bonita-springs-guide',
-    title: 'Living Local: A Guide to Downtown Bonita Springs',
-    excerpt: 'From hidden coffee shops to the best riverside walking paths, explore the vibrant culture that surrounds Bella Apartments just steps from your front door.',
+    slug: 'whats-coming-downtown-bonita-springs',
+    title: 'What\'s Coming to Downtown Bonita Springs: Why the Next Two Years Matter',
+    excerpt: 'Riverfront development, new restaurants, and public space investment are shaping downtown Bonita Springs\' next chapter.',
     image: '/images/downtown.jpg',
     category: 'Neighborhood',
-    date: 'June 12, 2025',
+    date: 'January 21, 2026',
     readTime: '4 min read',
   },
   {
-    slug: 'modern-minimalist-interiors',
-    title: 'Defining Your Space: Modern Minimalist Interiors',
-    excerpt: 'Our open-concept floor plans are the perfect canvas. Discover how to utilize natural light and organic textures to create a serene sanctuary in your new home.',
-    image: '/images/teak.jpg',
-    category: 'Design',
-    date: 'May 28, 2025',
-    readTime: '3 min read',
+    slug: 'rooftop-at-riverside-bonita-springs',
+    title: 'The Rooftop Bar at Riverside: Bonita Springs\' Open-Air Social Backyard',
+    excerpt: 'A two-story rooftop bar and rotating food truck park overlooking Riverside Park in downtown Bonita Springs.',
+    image: '/images/downtown.jpg',
+    category: 'Dining',
+    date: 'January 20, 2026',
+    readTime: '4 min read',
   },
   {
-    slug: 'local-coffee-guide',
-    title: 'Pour & Explore: The Local Coffee Guide',
-    excerpt: "Whether you need a quiet corner for remote work or a quick morning espresso, we've curated the ultimate list of artisanal roasters within walking distance.",
-    image: '/images/coffee.jpg',
-    category: 'Lifestyle',
-    date: 'May 15, 2025',
-    readTime: '2 min read',
+    slug: 'chartreuse-craft-cocktail-lounge',
+    title: 'Chartreuse: Where Bonita Springs Craft Cocktails Come Alive',
+    excerpt: 'A modern cocktail lounge in downtown Bonita Springs featuring inventive drinks, local art, and a vibrant atmosphere.',
+    image: '/images/downtown.jpg',
+    category: 'Dining',
+    date: 'January 18, 2026',
+    readTime: '4 min read',
   },
   {
-    slug: 'sunset-sessions-live-music',
-    title: 'Sunset Sessions: Live Music on the Lawn',
-    excerpt: 'Join us every Thursday evening this spring for acoustic performances by local artists. Bring a blanket, enjoy the breeze, and connect with your neighbors.',
+    slug: 'sugarshack-downtown-bonita-springs',
+    title: 'Sugarshack: Bonita Springs\' Neighborhood Bar with Soul',
+    excerpt: 'The chill neighborhood bar in downtown Bonita Springs where everyone knows your name and the vibe is always right.',
     image: '/images/music.webp',
-    category: 'Events',
-    date: 'April 22, 2025',
+    category: 'Entertainment',
+    date: 'January 15, 2026',
     readTime: '5 min read',
   },
   {
@@ -153,6 +154,7 @@ const blogPosts = [
 
 export default function Blog() {
   const currentYear = new Date().getFullYear();
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   useEffect(() => {
     document.title = 'Bonita Springs Apartments Blog | Downtown Bonita Springs Living';
@@ -160,7 +162,7 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
-      <Header currentPage="blog" />
+      <Header currentPage="blog" onBookShowing={() => setIsContactModalOpen(true)} />
 
       <main>
         {/* Page Title */}
@@ -291,7 +293,10 @@ export default function Blog() {
               <Link href="/blog" className="text-[#5b7a99]">
                 Bonita Springs
               </Link>
-              <button className="px-4 py-2 rounded-full bg-[#5b7a99] text-white font-medium hover:bg-[#4a6580]">
+              <button
+                onClick={() => setIsContactModalOpen(true)}
+                className="px-4 py-2 rounded-full bg-[#5b7a99] text-white font-medium hover:bg-[#4a6580]"
+              >
                 Book a Showing
               </button>
             </nav>
@@ -301,14 +306,22 @@ export default function Blog() {
             <p className="text-[11px] text-slate-500">
               © {currentYear} Bella Apartments. All rights reserved.
             </p>
-            <div className="flex gap-4 text-[11px] text-slate-500">
-              <span>Privacy</span>
-              <span>Terms</span>
-              <span>Fair Housing</span>
-            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=10575+Crockett+Street,+Bonita+Springs,+FL+34145"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-slate-600 hover:text-[#5b7a99] transition-colors"
+            >
+              10575 Crockett Street, Bonita Springs, FL 34145
+            </a>
           </div>
         </div>
       </footer>
+
+      <ContactFormModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+      />
     </div>
   );
 }

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import Header from '@/components/Header';
+import ContactFormModal from '@/components/ContactFormModal';
 
 interface Feature {
   id: number;
@@ -128,10 +129,11 @@ const categories = ['All', 'Interior', 'Appliances', 'Systems', 'Technology', 'B
 export default function Features() {
   const currentYear = new Date().getFullYear();
   const [selectedDifferentiator, setSelectedDifferentiator] = useState<Feature | null>(null);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900">
-      <Header currentPage="features" />
+      <Header currentPage="features" onBookShowing={() => setIsContactModalOpen(true)} />
 
       <main className="flex-1 bg-gradient-to-b from-slate-50 via-slate-50 to-slate-100">
         {/* Hero */}
@@ -224,7 +226,10 @@ export default function Features() {
               Schedule a tour to see these premium features and finishes in person.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-[#5b7a99] text-white px-8 py-3.5 text-[11px] font-semibold tracking-[0.2em] uppercase hover:bg-[#4a6580] transition-all shadow-sm">
+              <button
+                onClick={() => setIsContactModalOpen(true)}
+                className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-[#5b7a99] text-white px-8 py-3.5 text-[11px] font-semibold tracking-[0.2em] uppercase hover:bg-[#4a6580] transition-all shadow-sm"
+              >
                 Schedule a Tour
               </button>
               <Link
@@ -254,18 +259,24 @@ export default function Features() {
               <Link href="/features" className="text-[#5b7a99]">Features</Link>
               <Link href="/gallery" className="text-slate-500 hover:text-[#5b7a99]">Gallery</Link>
               <Link href="/blog" className="text-slate-500 hover:text-[#5b7a99]">Bonita Springs</Link>
-              <button className="px-4 py-2 rounded-full bg-[#5b7a99] text-white font-medium hover:bg-[#4a6580]">
+              <button
+                onClick={() => setIsContactModalOpen(true)}
+                className="px-4 py-2 rounded-full bg-[#5b7a99] text-white font-medium hover:bg-[#4a6580]"
+              >
                 Book a Showing
               </button>
             </nav>
           </div>
           <div className="mt-6 pt-4 border-t border-slate-200 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
             <p className="text-[11px] text-slate-500">© {currentYear} Bella Apartments. All rights reserved.</p>
-            <div className="flex gap-4 text-[11px] text-slate-500">
-              <span>Privacy</span>
-              <span>Terms</span>
-              <span>Fair Housing</span>
-            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=10575+Crockett+Street,+Bonita+Springs,+FL+34145"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-slate-600 hover:text-[#5b7a99] transition-colors"
+            >
+              10575 Crockett Street, Bonita Springs, FL 34145
+            </a>
           </div>
         </div>
       </footer>
@@ -317,7 +328,10 @@ export default function Features() {
 
               {/* CTA */}
               <div className="mt-6 flex gap-3">
-                <button className="flex-1 inline-flex items-center justify-center rounded-full bg-[#5b7a99] text-white px-6 py-3 text-[11px] font-semibold tracking-[0.2em] uppercase hover:bg-[#4a6580] transition-all">
+                <button
+                  onClick={() => setIsContactModalOpen(true)}
+                  className="flex-1 inline-flex items-center justify-center rounded-full bg-[#5b7a99] text-white px-6 py-3 text-[11px] font-semibold tracking-[0.2em] uppercase hover:bg-[#4a6580] transition-all"
+                >
                   Schedule a Tour
                 </button>
                 <button
@@ -331,6 +345,11 @@ export default function Features() {
           </div>
         </div>
       )}
+
+      <ContactFormModal
+        isOpen={isContactModalOpen}
+        onClose={() => setIsContactModalOpen(false)}
+      />
     </div>
   );
 }
