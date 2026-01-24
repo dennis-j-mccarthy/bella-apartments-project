@@ -43,7 +43,7 @@ It is the rare chance to live inside a town that is becoming something even bett
   'rooftop-at-riverside-bonita-springs': {
     title: 'The Rooftop Bar at Riverside: Bonita Springs\' Open-Air Social Backyard',
     excerpt: 'A two-story rooftop bar and rotating food truck park overlooking Riverside Park in downtown Bonita Springs.',
-    image: '/images/downtown.jpg',
+    image: '/images/rooftop2.avif',
     category: 'Dining',
     date: 'January 20, 2026',
     readTime: '3 min read',
@@ -74,7 +74,7 @@ It is somewhere you belong.
   'chartreuse-craft-cocktail-lounge': {
     title: 'Chartreuse Craft Cocktail Lounge: Bonita Springs\' Dessert-and-Cocktails Hideaway',
     excerpt: 'Intimate cocktails, indulgent desserts, and late-night conversation in downtown Bonita Springs.',
-    image: '/images/downtown.jpg',
+    image: '/images/chartreuse.png',
     category: 'Dining',
     date: 'January 19, 2026',
     readTime: '3 min read',
@@ -162,7 +162,7 @@ And living just steps away at Bella Apartments means **all of this becomes every
   'canary-club-bonita-springs': {
     title: 'Canary Club Bonita Springs: Wood-Fired Sourdough Pizza, Cocktails, and a Patio Made for Downtown Nights',
     excerpt: 'Middle Eastern and Levantine-inspired mezze, sourdough pizzas from a wood-fired hearth, and a large outdoor patio make Canary Club a downtown Bonita Springs staple.',
-    image: '/images/downtown.jpg',
+    image: '/images/canary.png',
     category: 'Dining',
     date: 'January 17, 2026',
     readTime: '4 min read',
@@ -246,7 +246,7 @@ It is something you live.
   'bonita-springs-beaches': {
     title: 'Bonita Springs Beaches: Barefoot, Delnor-Wiggins, and Vanderbilt All Within Reach',
     excerpt: 'Downtown Bonita Springs living paired with quick access to Southwest Florida\'s most beautiful and diverse beaches.',
-    image: '/images/pool.jpg',
+    image: '/images/beach-sunset.jpg',
     category: 'Lifestyle',
     date: 'January 15, 2026',
     readTime: '5 min read',
@@ -302,7 +302,7 @@ This is dining as lifestyle, not itinerary.
   'riverside-park-imperial-river': {
     title: 'Riverside Park & the Imperial River: The Heart of Downtown Bonita Springs',
     excerpt: 'Concert nights, art festivals, movie evenings, and riverfront walks define community life in downtown Bonita Springs.',
-    image: '/images/downtown.jpg',
+    image: '/images/riverside.avif',
     category: 'Community',
     date: 'January 13, 2026',
     readTime: '4 min read',
@@ -559,7 +559,7 @@ From bandshell festivals to intimate club sets, Bonita Springs offers a rhythm o
   'seasonal-living-southwest-florida': {
     title: 'Relocating to Bonita Springs: Your Year-Round Living Guide',
     excerpt: 'Thinking of relocating to Bonita Springs apartments? Learn about seasonal living in downtown Bonita Springs and what to expect year-round.',
-    image: '/images/pool.jpg',
+    image: '/images/downtown-webp.webp',
     category: 'Lifestyle',
     date: 'December 10, 2025',
     readTime: '5 min read',
@@ -696,7 +696,7 @@ Whether you're grabbing a cocktail at the bar, sharing small plates with friends
   'shangri-la-spa-wellness': {
     title: 'Bonita Springs Apartments Living: Wellness & Spa Guide',
     excerpt: 'Discover wellness options near downtown Bonita Springs apartments including Shangri La Spa. Essential for relocating to Bonita Springs.',
-    image: '/images/pool.jpg',
+    image: '/images/shangrila.jpg',
     category: 'Wellness',
     date: 'November 22, 2025',
     readTime: '3 min read',
@@ -849,7 +849,7 @@ From jazz under the oaks to holiday celebrations that light up the riverside, th
   'upcoming-downtown-developments': {
     title: 'Relocating to Bonita Springs: New Downtown Developments',
     excerpt: 'Considering Bonita Springs apartments? Learn about upcoming downtown Bonita Springs developments and the future of the area.',
-    image: '/images/downtown.jpg',
+    image: '/images/citymap.png',
     category: 'Neighborhood',
     date: 'November 8, 2025',
     readTime: '4 min read',
@@ -1048,9 +1048,24 @@ export default function BlogDetail() {
   const currentYear = new Date().getFullYear();
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
-  // Get all blog posts excluding current post
+  // Only show blogs that are visible on the main listing page
+  const visibleSlugs = [
+    'whats-coming-downtown-bonita-springs',
+    'rooftop-at-riverside-bonita-springs',
+    'chartreuse-craft-cocktail-lounge',
+    'sugarshack-downtown-bonita-springs',
+    'downtown-coffee-wine-guide',
+    'seasonal-living-southwest-florida',
+    'canary-club-restaurant',
+    'shangri-la-spa-wellness',
+    'sugar-shack-live-music',
+    'bandshell-festivals',
+    'upcoming-downtown-developments',
+  ];
+
+  // Get all blog posts excluding current post, filtered to only visible ones
   const allPosts = post ? Object.entries(blogPosts)
-    .filter(([postSlug]) => postSlug !== slug)
+    .filter(([postSlug]) => postSlug !== slug && visibleSlugs.includes(postSlug))
     .map(([postSlug, postData]) => ({
       slug: postSlug,
       ...postData
@@ -1104,9 +1119,8 @@ export default function BlogDetail() {
           <img
             src={post.image}
             alt={post.title}
-            className="w-full h-full object-cover opacity-70"
+            className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent" />
         </section>
 
         {/* Article Content */}
@@ -1149,16 +1163,59 @@ export default function BlogDetail() {
                 {/* Content */}
                 <div className="prose prose-slate max-w-none">
                   {post.content.split('\n\n').map((paragraph, index) => {
-                    if (paragraph.startsWith('**') && paragraph.endsWith('**')) {
+                    // Skip BellaCTA component tags
+                    if (paragraph.trim() === '<BellaCTA />') {
+                      return null;
+                    }
+                    // H2 headings
+                    if (paragraph.startsWith('## ')) {
+                      return (
+                        <h2 key={index} className="text-2xl font-playfair text-slate-900 mt-10 mb-4">
+                          {paragraph.replace('## ', '')}
+                        </h2>
+                      );
+                    }
+                    // Bold-only paragraph as H3
+                    if (paragraph.startsWith('**') && paragraph.endsWith('**') && !paragraph.slice(2, -2).includes('**')) {
                       return (
                         <h3 key={index} className="text-xl font-playfair text-slate-900 mt-8 mb-4">
                           {paragraph.replace(/\*\*/g, '')}
                         </h3>
                       );
                     }
+                    // Bullet lists
+                    if (paragraph.startsWith('- ')) {
+                      const items = paragraph.split('\n').filter(line => line.startsWith('- '));
+                      return (
+                        <ul key={index} className="list-disc list-inside text-slate-600 leading-relaxed mb-4 space-y-2">
+                          {items.map((item, i) => {
+                            const text = item.replace(/^- /, '');
+                            // Handle inline bold in list items
+                            const parts = text.split(/(\*\*[^*]+\*\*)/g);
+                            return (
+                              <li key={i}>
+                                {parts.map((part, j) => {
+                                  if (part.startsWith('**') && part.endsWith('**')) {
+                                    return <strong key={j} className="font-semibold text-slate-800">{part.slice(2, -2)}</strong>;
+                                  }
+                                  return part;
+                                })}
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      );
+                    }
+                    // Regular paragraph with inline bold support
+                    const parts = paragraph.split(/(\*\*[^*]+\*\*)/g);
                     return (
                       <p key={index} className="text-slate-600 leading-relaxed mb-4">
-                        {paragraph}
+                        {parts.map((part, i) => {
+                          if (part.startsWith('**') && part.endsWith('**')) {
+                            return <strong key={i} className="font-semibold text-slate-800">{part.slice(2, -2)}</strong>;
+                          }
+                          return part;
+                        })}
                       </p>
                     );
                   })}

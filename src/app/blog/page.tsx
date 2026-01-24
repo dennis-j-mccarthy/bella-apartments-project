@@ -19,7 +19,7 @@ const blogPosts = [
     slug: 'rooftop-at-riverside-bonita-springs',
     title: 'The Rooftop Bar at Riverside: Bonita Springs\' Open-Air Social Backyard',
     excerpt: 'A two-story rooftop bar and rotating food truck park overlooking Riverside Park in downtown Bonita Springs.',
-    image: '/images/downtown.jpg',
+    image: '/images/rooftop2.avif',
     category: 'Dining',
     date: 'January 20, 2026',
     readTime: '4 min read',
@@ -28,7 +28,7 @@ const blogPosts = [
     slug: 'chartreuse-craft-cocktail-lounge',
     title: 'Chartreuse: Where Bonita Springs Craft Cocktails Come Alive',
     excerpt: 'A modern cocktail lounge in downtown Bonita Springs featuring inventive drinks, local art, and a vibrant atmosphere.',
-    image: '/images/downtown.jpg',
+    image: '/images/chartreuse.png',
     category: 'Dining',
     date: 'January 18, 2026',
     readTime: '4 min read',
@@ -43,15 +43,6 @@ const blogPosts = [
     readTime: '5 min read',
   },
   {
-    slug: 'walkability-downtown-advantage',
-    title: 'Downtown Bonita Springs Apartments: Walkable Living Guide',
-    excerpt: 'Discover why Bonita Springs apartments in walkable downtown locations offer authentic urban living with real connections. Your guide to relocating to Bonita Springs.',
-    image: '/images/downtown.jpg',
-    category: 'Neighborhood',
-    date: 'December 28, 2025',
-    readTime: '5 min read',
-  },
-  {
     slug: 'downtown-coffee-wine-guide',
     title: 'Downtown Bonita Springs Living: Coffee & Wine Culture',
     excerpt: 'Relocating to Bonita Springs? Explore the coffee and wine scene near downtown Bonita Springs apartments and discover the local lifestyle.',
@@ -61,37 +52,19 @@ const blogPosts = [
     readTime: '4 min read',
   },
   {
-    slug: 'bonita-music-scene',
-    title: 'Bonita Springs Apartments: Live Music & Entertainment Guide',
-    excerpt: 'Downtown Bonita Springs living includes thriving music venues from bandshell to rooftops. Essential guide for relocating to Bonita Springs.',
-    image: '/images/music.webp',
-    category: 'Entertainment',
-    date: 'December 15, 2025',
-    readTime: '6 min read',
-  },
-  {
     slug: 'seasonal-living-southwest-florida',
     title: 'Relocating to Bonita Springs: Your Year-Round Living Guide',
     excerpt: 'Thinking of relocating to Bonita Springs apartments? Learn about seasonal living in downtown Bonita Springs and what to expect year-round.',
-    image: '/images/pool.jpg',
+    image: '/images/downtown-webp.webp',
     category: 'Lifestyle',
     date: 'December 10, 2025',
     readTime: '5 min read',
   },
   {
-    slug: 'farmers-markets-bonita',
-    title: 'Downtown Bonita Springs Lifestyle: Farmers Markets Guide',
-    excerpt: 'Experience farm-to-table living near Bonita Springs apartments. Your guide to downtown Bonita Springs farmers markets and local food culture.',
-    image: '/images/downtown.jpg',
-    category: 'Lifestyle',
-    date: 'December 5, 2025',
-    readTime: '4 min read',
-  },
-  {
     slug: 'canary-club-restaurant',
     title: 'Downtown Bonita Springs Dining: Canary Club Restaurant',
     excerpt: 'Living in downtown Bonita Springs apartments means walkable dining at unique spots like Canary Club. Your local restaurant guide.',
-    image: '/images/downtown.jpg',
+    image: '/images/canary.png',
     category: 'Dining',
     date: 'November 28, 2025',
     readTime: '4 min read',
@@ -100,7 +73,7 @@ const blogPosts = [
     slug: 'shangri-la-spa-wellness',
     title: 'Bonita Springs Apartments Living: Wellness & Spa Guide',
     excerpt: 'Discover wellness options near downtown Bonita Springs apartments including Shangri La Spa. Essential for relocating to Bonita Springs.',
-    image: '/images/pool.jpg',
+    image: '/images/shangrila.jpg',
     category: 'Wellness',
     date: 'November 22, 2025',
     readTime: '3 min read',
@@ -118,7 +91,7 @@ const blogPosts = [
     slug: 'bandshell-festivals',
     title: 'Bonita Springs Apartments: Riverside Park Events Guide',
     excerpt: 'Downtown Bonita Springs living includes walkable festivals and concerts. Your guide to community events near Bonita Springs apartments.',
-    image: '/images/downtown.jpg',
+    image: '/images/riverside.avif',
     category: 'Events',
     date: 'November 12, 2025',
     readTime: '5 min read',
@@ -127,27 +100,9 @@ const blogPosts = [
     slug: 'upcoming-downtown-developments',
     title: 'Relocating to Bonita Springs: New Downtown Developments',
     excerpt: 'Considering Bonita Springs apartments? Learn about upcoming downtown Bonita Springs developments and the future of the area.',
-    image: '/images/downtown.jpg',
+    image: '/images/citymap.png',
     category: 'Neighborhood',
     date: 'November 8, 2025',
-    readTime: '4 min read',
-  },
-  {
-    slug: 'community-connections-matter',
-    title: 'Downtown Bonita Springs Apartments: Community Living Benefits',
-    excerpt: 'Why downtown Bonita Springs living offers genuine community connections. Essential reading for relocating to Bonita Springs apartments.',
-    image: '/images/downtown.jpg',
-    category: 'Community',
-    date: 'November 2, 2025',
-    readTime: '5 min read',
-  },
-  {
-    slug: 'rooftop-bar-live-music',
-    title: 'Bonita Springs Apartments: Rooftop Bar Entertainment Guide',
-    excerpt: 'Experience downtown Bonita Springs living with walkable rooftop bars and live music. Your relocation guide to local nightlife.',
-    image: '/images/music.webp',
-    category: 'Entertainment',
-    date: 'October 25, 2025',
     readTime: '4 min read',
   },
 ];
@@ -233,12 +188,6 @@ export default function Blog() {
               ))}
             </div>
 
-            {/* Load More */}
-            <div className="mt-20 flex justify-center">
-              <button className="inline-flex items-center justify-center rounded-full border border-slate-200 px-8 py-3 text-[11px] font-semibold tracking-[0.2em] uppercase text-slate-600 hover:border-[#5b7a99] hover:text-[#5b7a99] bg-white transition-all shadow-sm">
-                Load More Articles
-              </button>
-            </div>
           </div>
         </section>
 
