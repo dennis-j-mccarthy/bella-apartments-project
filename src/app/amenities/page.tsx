@@ -276,7 +276,7 @@ export default function Amenities() {
               <div className="bg-white rounded-2xl border border-slate-200/60 hover:border-slate-300 hover:shadow-sm transition-all duration-300 group overflow-hidden">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
-                    src="/images/the-bella-downtown-bonita-springs-fl-pool.jpg"
+                    src="https://ik.imagekit.io/jnwpkntpm/DSC02362.jpg"
                     alt="Poolside BBQ area at Bella"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
