@@ -21,7 +21,7 @@ const floorplans = [
   { unit: '306', beds: 2, baths: 2, sqft: 1000, floor: 3, balcony: true, ada: false, image: '/images/305,306,307.png.webp' },
   { unit: '307', beds: 2, baths: 2, sqft: 1000, floor: 3, balcony: true, ada: false, image: '/images/305,306,307.png.webp' },
   { unit: '401', beds: 1, baths: 1, sqft: 900, floor: 4, balcony: true, ada: false, image: '/images/201.png.webp' },
-  { unit: '402', beds: 2, baths: 2, sqft: 1000, floor: 4, balcony: true, ada: false, image: '/images/205,206,207.png.webp' },
+  { unit: '402', beds: 2, baths: 2, sqft: 1000, floor: 4, balcony: true, ada: false, image: '/images/402.png' },
   { unit: '403', beds: 2, baths: 2, sqft: 1000, floor: 4, balcony: true, ada: false, image: '/images/403.png' },
   { unit: '404', beds: 1, baths: 1, sqft: 900, floor: 4, balcony: true, ada: false, image: '/images/404.png' },
   { unit: '405', beds: 2, baths: 2, sqft: 1000, floor: 4, balcony: true, ada: false, image: '/images/405.png' },
