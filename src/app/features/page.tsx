@@ -250,7 +250,7 @@ export default function Features() {
             <img
               src="/images/bella-logo-final.png"
               alt="Bella Apartments logo"
-              className="h-8 w-auto"
+              className="h-8 w-auto object-contain self-start"
             />
             <nav className="flex flex-wrap items-center gap-5 text-[11px] font-normal tracking-[0.18em] uppercase">
               <Link href="/" className="text-slate-500 hover:text-[#5b7a99]">Home</Link>

@@ -276,7 +276,7 @@ export default function Amenities() {
               <div className="bg-white rounded-2xl border border-slate-200/60 hover:border-slate-300 hover:shadow-sm transition-all duration-300 group overflow-hidden">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
-                    src="https://ik.imagekit.io/jnwpkntpm/DSC02362.jpg"
+                    src="/images/the-bella-downtown-bonita-springs-fl-pool.jpg"
                     alt="Poolside BBQ area at Bella"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -404,14 +404,12 @@ export default function Amenities() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             {/* Logo */}
-            <div className="flex gap-x-2 items-center">
-              <div className="h-8">
-                <img
-                  src="/images/bella-logo-final.png"
-                  alt="Bella Apartments logo"
-                  className="h-8 w-auto"
-                />
-              </div>
+            <div className="flex gap-x-2 items-center self-start">
+              <img
+                src="/images/bella-logo-final.png"
+                alt="Bella Apartments logo"
+                className="h-8 w-auto object-contain"
+              />
             </div>
 
             {/* Footer Nav */}

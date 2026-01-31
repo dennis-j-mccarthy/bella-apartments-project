@@ -704,14 +704,12 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             {/* Logo */}
-            <div className="flex gap-x-2 items-center">
-              <div className="h-8">
-                <img
-                  src="/images/bella-logo-final.png"
-                  alt="Bella Apartments logo"
-                  className="h-8 w-auto"
-                />
-              </div>
+            <div className="flex gap-x-2 items-center self-start">
+              <img
+                src="/images/bella-logo-final.png"
+                alt="Bella Apartments logo"
+                className="h-8 w-auto object-contain"
+              />
             </div>
 
             {/* Footer Nav */}
