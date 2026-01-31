@@ -176,16 +176,8 @@ export default function Floorplans() {
                       </div>
                     </div>
 
-                    <p className="mt-3 text-xs text-slate-600 leading-relaxed">
-                      Experience modern urban living in this spacious {plan.sqft.toLocaleString()} square foot
-                      {plan.beds === 1 ? ' one-bedroom' : ' two-bedroom'}, {plan.baths === 1 ? 'one-bathroom' : 'two-bathroom'} apartment
-                      on the {plan.floor === 2 ? '2nd' : plan.floor === 3 ? '3rd' : '4th'} floor.
-                      Features include open-concept living, large windows, in-unit washer/dryer,
-                      quartz countertops, and stainless steel appliances.
-                    </p>
-
                     <button
-                      className="mt-4 inline-flex items-center text-[11px] font-medium tracking-[0.18em] uppercase text-[#5b7a99] hover:text-[#4a6580] transition-colors"
+                      className="mt-3 inline-flex items-center text-[11px] font-medium tracking-[0.18em] uppercase text-[#5b7a99] hover:text-[#4a6580] transition-colors"
                       onClick={(e) => {
                         e.stopPropagation();
                         setSelectedPlan(plan);
