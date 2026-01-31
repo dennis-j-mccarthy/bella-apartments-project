@@ -17,6 +17,9 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: 'Bella Apartments – Bonita Springs Luxury Living',
   description: 'Luxury apartments in Downtown Bonita Springs',
+  verification: {
+    google: 'yamUAzKPdLOsFcbaz3UfoN4pSYel4J6a9I8heuxBKHw',
+  },
   openGraph: {
     title: 'Bella Apartments – Modern Luxury in Downtown Bonita Springs',
     description: 'Discover twenty-one thoughtfully designed residences in the heart of Downtown Bonita Springs. Featuring modern finishes, private balconies, resort-style amenities, and walkable access to shops, dining, and entertainment.',
