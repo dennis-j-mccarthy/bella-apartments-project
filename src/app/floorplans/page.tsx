@@ -74,7 +74,7 @@ export default function Floorplans() {
                   1BR starting at $2,250 – 2BR starting at $2,350
                 </p>
                 <p className="mt-4 text-sm text-slate-600 max-w-xl">
-                  Browse all sixteen residences at Bella—from efficient studios to expanded
+                  Browse all twenty-one residences at Bella—from efficient studios to expanded
                   two-bedrooms with balconies. Every layout is optimized for natural light,
                   storage, and everyday luxury living.
                 </p>
