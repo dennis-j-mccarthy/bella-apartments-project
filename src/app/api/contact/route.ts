@@ -86,6 +86,7 @@ Move-in: ${data.moveInTimeline}`;
         from: 'Bella Apartments <onboarding@resend.dev>',
         to: [
           'dennisjmccarthy@gmail.com',
+          'bellabonitasprings@gmail.com',
         ],
         subject: `New Showing Request: ${data.firstName} ${data.lastName}`,
         html: emailHtml,
