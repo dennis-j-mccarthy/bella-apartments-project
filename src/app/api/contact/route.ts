@@ -87,6 +87,7 @@ Move-in: ${data.moveInTimeline}`;
         to: [
           'dennisjmccarthy@gmail.com',
           'bellabonitasprings@gmail.com',
+          'rich@smartgroupchicago.com',
         ],
         subject: `New Showing Request: ${data.firstName} ${data.lastName}`,
         html: emailHtml,
