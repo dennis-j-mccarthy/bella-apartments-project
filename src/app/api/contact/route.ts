@@ -83,7 +83,7 @@ Move-in: ${data.moveInTimeline}`;
       `;
 
       await resend.emails.send({
-        from: 'Bella Apartments <onboarding@resend.dev>',
+        from: 'Bella Apartments <noreply@bellabonitasprings.com>',
         to: [
           'dennisjmccarthy@gmail.com',
           'bellabonitasprings@gmail.com',
