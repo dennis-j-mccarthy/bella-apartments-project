@@ -88,7 +88,13 @@ export default function Home() {
                       className="inline-flex items-center justify-center rounded-full bg-[#5b7a99] text-white px-4 py-2 text-[11px] font-medium tracking-[0.2em] uppercase hover:bg-[#4a6580]">
                       Schedule a Tour
                     </button>
-                                      </div>
+                    <a
+                      href="tel:+13125041835"
+                      className="inline-flex items-center justify-center rounded-full border border-slate-300 text-slate-700 px-4 py-2 text-[11px] font-medium tracking-[0.2em] uppercase hover:bg-slate-100"
+                    >
+                      Call the Owner 312-504-1835
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -164,9 +170,9 @@ export default function Home() {
                 </p>
               </div>
               <div>
-                <button className="inline-flex items-center justify-center rounded-full bg-slate-900 text-white px-4 py-2 text-[11px] font-medium tracking-[0.2em] uppercase hover:bg-slate-800">
+                <Link href="/floorplans" className="inline-flex items-center justify-center rounded-full bg-slate-900 text-white px-4 py-2 text-[11px] font-medium tracking-[0.2em] uppercase hover:bg-slate-800">
                   View Floorplans
-                </button>
+                </Link>
               </div>
             </div>
 
@@ -277,7 +283,7 @@ export default function Home() {
               </div>
 
               <div className="flex justify-end">
-                <button className="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.2em] uppercase text-slate-700 hover:text-slate-900">
+                <Link href="/floorplans" className="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.2em] uppercase text-slate-700 hover:text-slate-900">
                   View Floorplans
                   <span className="inline-flex">
                     <svg
@@ -292,7 +298,7 @@ export default function Home() {
                       <polyline points="9 6 15 12 9 18" />
                     </svg>
                   </span>
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -382,9 +388,9 @@ export default function Home() {
                 boutique elevator building, pool, fitness center, and much more.
               </p>
               <div className="flex flex-wrap gap-3 mt-6 items-center">
-                <button className="inline-flex items-center justify-center rounded-full bg-slate-900 text-white px-4 py-2 text-[11px] font-medium tracking-[0.2em] uppercase hover:bg-slate-800">
+                <Link href="/amenities" className="inline-flex items-center justify-center rounded-full bg-slate-900 text-white px-4 py-2 text-[11px] font-medium tracking-[0.2em] uppercase hover:bg-slate-800">
                   Explore Amenities
-                </button>
+                </Link>
                 <p className="text-xs font-black text-slate-600">🐕 WE'RE PET FRIENDLY!</p>
               </div>
             </div>
@@ -741,13 +747,7 @@ export default function Home() {
             <p className="text-[11px] text-slate-500">
               © {currentYear} Bella Apartments. All rights reserved.
             </p>
-            <a
-              href="tel:8475772900"
-              className="text-lg font-semibold text-[#5b7a99] hover:text-[#4a6580] transition-colors"
-            >
-              847.577.2900
-            </a>
-            <a
+<a
               href="https://www.google.com/maps/search/?api=1&query=10575+Crockett+Street,+Bonita+Springs,+FL+34145"
               target="_blank"
               rel="noopener noreferrer"

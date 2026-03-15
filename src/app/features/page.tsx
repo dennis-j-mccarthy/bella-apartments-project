@@ -269,13 +269,7 @@ export default function Features() {
           </div>
           <div className="mt-6 pt-4 border-t border-slate-200 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
             <p className="text-[11px] text-slate-500">© {currentYear} Bella Apartments. All rights reserved.</p>
-            <a
-              href="tel:8475772900"
-              className="text-lg font-semibold text-[#5b7a99] hover:text-[#4a6580] transition-colors"
-            >
-              847.577.2900
-            </a>
-            <a
+<a
               href="https://www.google.com/maps/search/?api=1&query=10575+Crockett+Street,+Bonita+Springs,+FL+34145"
               target="_blank"
               rel="noopener noreferrer"

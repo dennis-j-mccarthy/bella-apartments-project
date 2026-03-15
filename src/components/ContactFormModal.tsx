@@ -73,7 +73,7 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
       />
 
       {/* Modal */}
-      <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 p-8">
+      <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 p-6 sm:p-8 max-h-[90vh] overflow-y-auto">
         {/* Close button */}
         <button
           onClick={handleClose}
