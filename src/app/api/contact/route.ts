@@ -85,8 +85,6 @@ Move-in: ${data.moveInTimeline}`;
       await resend.emails.send({
         from: 'Bella Apartments <onboarding@resend.dev>',
         to: [
-          'rich@smartgroupchicago.com',
-          'bellabonitasprings@gmail.com',
           'dennisjmccarthy@gmail.com',
         ],
         subject: `New Showing Request: ${data.firstName} ${data.lastName}`,
