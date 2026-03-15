@@ -176,12 +176,11 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Carousel */}
             <div className="space-y-4">
-              <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white">
-                <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory p-3">
+              <div className="rounded-3xl border border-slate-200 bg-white">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-3">
                   {/* Slide 1 */}
-                  <div className="min-w-[260px] sm:min-w-[320px] md:min-w-[360px] snap-start rounded-2xl overflow-hidden border border-slate-200 bg-white">
+                  <div className="rounded-2xl overflow-hidden border border-slate-200 bg-white">
                     <div className="h-56 bg-slate-100">
                       <img
                         src="/images/the-bella-downtown-bonita-springs-fl-2br-2ba---kitchen.png"
@@ -202,7 +201,7 @@ export default function Home() {
                     </div>
                   </div>
                   {/* Slide 2 */}
-                  <div className="min-w-[260px] sm:min-w-[320px] md:min-w-[360px] snap-start rounded-2xl overflow-hidden border border-slate-200 bg-white">
+                  <div className="rounded-2xl overflow-hidden border border-slate-200 bg-white">
                     <div className="h-56 bg-slate-100">
                       <img
                         src="/images/the-bella-downtown-bonita-springs-fl-second-bathroom.jpg"
@@ -223,7 +222,7 @@ export default function Home() {
                     </div>
                   </div>
                   {/* Slide 3 */}
-                  <div className="min-w-[260px] sm:min-w-[320px] md:min-w-[360px] snap-start rounded-2xl overflow-hidden border border-slate-200 bg-white">
+                  <div className="rounded-2xl overflow-hidden border border-slate-200 bg-white">
                     <div className="h-56 bg-slate-100">
                       <img
                         src="/images/the-bella-downtown-bonita-springs-fl-primary-bedroom.jpg"
@@ -242,42 +241,6 @@ export default function Home() {
                         Spacious bedrooms, walk-in closets, and spa-inspired bathrooms for refined daily living.
                       </p>
                     </div>
-                  </div>
-                </div>
-                {/* Carousel controls */}
-                <div className="absolute inset-x-0 bottom-0 flex items-center justify-between px-4 pb-3 pt-2 bg-gradient-to-t from-slate-900/5 to-transparent">
-                  <div className="flex items-center gap-1.5">
-                    <span className="h-1.5 w-5 rounded-full bg-slate-900" />
-                    <span className="h-1.5 w-1.5 rounded-full bg-slate-400" />
-                    <span className="h-1.5 w-1.5 rounded-full bg-slate-400" />
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <button className="h-7 w-7 rounded-full border border-slate-300 flex items-center justify-center text-slate-700 hover:border-slate-400 bg-white">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
-                        stroke="currentColor"
-                        fill="none"
-                      >
-                        <polyline points="15 6 9 12 15 18" />
-                      </svg>
-                    </button>
-                    <button className="h-7 w-7 rounded-full border border-slate-300 flex items-center justify-center text-slate-700 hover:border-slate-400 bg-white">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        strokeWidth="1.5"
-                        stroke="currentColor"
-                        fill="none"
-                      >
-                        <polyline points="9 6 15 12 9 18" />
-                      </svg>
-                    </button>
                   </div>
                 </div>
               </div>

@@ -108,40 +108,40 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
         ) : (
           <>
             {/* Contact Rich Section */}
-            <div className="flex items-center gap-4 mb-5">
+            <div className="flex items-center gap-3 mb-3">
               <img
                 src="https://ik.imagekit.io/jnwpkntpm/rich.jpg"
                 alt="Rich, the owner"
-                className="w-16 h-16 rounded-full object-cover"
+                className="w-12 h-12 rounded-full object-cover"
               />
               <div>
-                <p className="text-sm text-gray-600">Contact Rich the owner now via SMS:</p>
+                <p className="text-xs text-gray-600">Contact Rich the owner now via SMS:</p>
                 <a
                   href="sms:+13125041835"
-                  className="text-lg font-semibold text-[#5b7a99] hover:text-[#4a6a89] transition-colors"
+                  className="text-base font-semibold text-[#5b7a99] hover:text-[#4a6a89] transition-colors"
                 >
                   (312) 504-1835
                 </a>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 my-5">
+            <div className="flex items-center gap-3 my-3">
               <div className="flex-1 border-t border-gray-200" />
-              <span className="text-sm text-gray-500">Or</span>
+              <span className="text-xs text-gray-500">Or</span>
               <div className="flex-1 border-t border-gray-200" />
             </div>
 
-            <h2 className="text-2xl font-semibold text-gray-900 mb-2" style={{ fontFamily: 'Playfair Display, serif' }}>
+            <h2 className="text-xl font-semibold text-gray-900 mb-1" style={{ fontFamily: 'Playfair Display, serif' }}>
               Sign Up to Book a Showing
             </h2>
-            <p className="text-gray-600 mb-6">
+            <p className="text-sm text-gray-600 mb-3">
               Fill out the form below and we&apos;ll contact you to schedule a tour.
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-3">
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="firstName" className="block text-xs font-medium text-gray-700 mb-0.5">
                     First Name
                   </label>
                   <input
@@ -151,12 +151,12 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
                     value={formData.firstName}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5b7a99] focus:border-transparent outline-none transition-all"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5b7a99] focus:border-transparent outline-none transition-all text-sm"
                     placeholder="John"
                   />
                 </div>
                 <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
+                  <label htmlFor="lastName" className="block text-xs font-medium text-gray-700 mb-0.5">
                     Last Name
                   </label>
                   <input
@@ -166,14 +166,14 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
                     value={formData.lastName}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5b7a99] focus:border-transparent outline-none transition-all"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5b7a99] focus:border-transparent outline-none transition-all text-sm"
                     placeholder="Doe"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="email" className="block text-xs font-medium text-gray-700 mb-0.5">
                   Email
                 </label>
                 <input
@@ -183,13 +183,13 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5b7a99] focus:border-transparent outline-none transition-all"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5b7a99] focus:border-transparent outline-none transition-all text-sm"
                   placeholder="john@example.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="phoneNumber" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="phoneNumber" className="block text-xs font-medium text-gray-700 mb-0.5">
                   Phone Number
                 </label>
                 <input
@@ -199,13 +199,13 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
                   value={formData.phoneNumber}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5b7a99] focus:border-transparent outline-none transition-all"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5b7a99] focus:border-transparent outline-none transition-all text-sm"
                   placeholder="(555) 123-4567"
                 />
               </div>
 
               <div>
-                <label htmlFor="moveInTimeline" className="block text-sm font-medium text-gray-700 mb-1">
+                <label htmlFor="moveInTimeline" className="block text-xs font-medium text-gray-700 mb-0.5">
                   When are you looking to move?
                 </label>
                 <select
@@ -214,7 +214,7 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
                   value={formData.moveInTimeline}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5b7a99] focus:border-transparent outline-none transition-all bg-white"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#5b7a99] focus:border-transparent outline-none transition-all text-sm bg-white"
                 >
                   <option value="">Select a timeframe</option>
                   <option value="immediately">Immediately</option>
@@ -234,7 +234,7 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#5b7a99] text-white py-3 rounded-full font-medium hover:bg-[#4a6a89] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-[#5b7a99] text-white py-2.5 rounded-full font-medium text-sm hover:bg-[#4a6a89] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Submitting...' : 'Submit'}
               </button>
