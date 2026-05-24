@@ -110,7 +110,7 @@ export default function ContactFormModal({ isOpen, onClose }: ContactFormModalPr
             {/* Contact Rich Section */}
             <div className="flex items-center gap-3 mb-3">
               <img
-                src="https://ik.imagekit.io/jnwpkntpm/rich.jpg"
+                src="/images/rich.jpg"
                 alt="Rich, the owner"
                 className="w-12 h-12 rounded-full object-cover"
               />

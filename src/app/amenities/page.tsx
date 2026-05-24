@@ -255,7 +255,7 @@ export default function Amenities() {
               <div className="bg-white rounded-2xl border border-slate-200/60 hover:border-slate-300 hover:shadow-sm transition-all duration-300 group overflow-hidden">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img
-                    src="https://ik.imagekit.io/jnwpkntpm/DSC02338.jpg"
+                    src="/images/DSC02338.jpg"
                     alt="Guest suite at Bella"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
